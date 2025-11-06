@@ -1,75 +1,118 @@
 body {
-    position: relative;
-}
+  height: 100vh;
+  /* hace que cubra toda la altura visible */
+  width: 100%;
+  position: relative;
+  /*Se ajusta solo dependiendo de las dimensiones y tal*/
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4)),
+    /* capa oscura encima difuminada */
+    url('../Assets/Pictures/perrito_fondo.jpeg');
+  /* imagen de fondo real */
+  background-size: cover;
+  /* cubre toda la pantalla */
+  background-position: center;
+  /* centra la imagen */
+  background-repeat: no-repeat;
+  /* La foto no se repite */
+  background-attachment: fixed;
+  /* Hace que la foto al hacer scroll se deslize mas lento */
 
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.25));
-    pointer-events: none;
-    z-index: 1;
 }
 
 .navbar {
-  position: fixed;/*Navbar fija al hacer scroll */
-  top: 20px;  /* Coloca la navbar 20px hacia abajo desde el borde superior de la pantalla */
-  right: 20px;  /* Coloca la navbar 20px desde el borde derecho de la pantalla */
-  display: flex;  /* Alinear los elementos dentro de la navbar */
-  background: rgba(0, 0, 0, 0.25);  /* Fondo de la navbar, negro con 25% de opacidad, da sensacion de transparencia */
-  backdrop-filter: blur(30px);  /* Blur a lo que está detrás de la navbar */
-  padding: 12px 24px;  /* Añade 12px de espacio arriba y abajo y 24px a los lados dentro de la navbar */
-  border-radius: 100px;  /* Redondea los bordes de la navbar*/
+  position: fixed;
+  /*Navbar fija al hacer scroll */
+  top: 20px;
+  /* Coloca la navbar 20px hacia abajo desde el borde superior de la pantalla */
+  right: 20px;
+  /* Coloca la navbar 20px desde el borde derecho de la pantalla */
+  display: flex;
+  /* Alinear los elementos dentro de la navbar */
+  background: rgba(0, 0, 0, 0.25);
+  /* Fondo de la navbar, negro con 25% de opacidad, da sensacion de transparencia */
+  backdrop-filter: blur(30px);
+  /* Blur a lo que está detrás de la navbar */
+  padding: 12px 24px;
+  /* Añade 12px de espacio arriba y abajo y 24px a los lados dentro de la navbar */
+  border-radius: 100px;
+  /* Redondea los bordes de la navbar*/
 }
 
 .navbar .navbar-brand {
-  display: flex;  /* Utiliza Flexbox para alinear los elementos */
-  align-items: center;  /* Centra los elementos dentro del enlace */
-  gap: 4px;  /* Añade un espacio de 4px entre el icono y el texto */
-  font-family: var(--primary-font-bold);  /* Define el font del texto*/
-  font-size: 16px;  /* Establece el tamaño del font */
-  color: #FAF5E9;  /* Color del texto*/
-  text-decoration: none;  /* Elimina el subrayado de los enlaces para que solo salga con el hover */
-  margin-left: 25px;  /* Añade un margen a la izquierda del enlace */
-  transition: 0.3s;  /* Aplica una transición para las interacciones, como cambios de color o transformaciones */
-  position: relative;  /* Permite que los elementos dentro del enlace se posicionen de manera relativa al enlace */
+  display: flex;
+  /* Utiliza Flexbox para alinear los elementos */
+  align-items: center;
+  /* Centra los elementos dentro del enlace */
+  gap: 4px;
+  /* Añade un espacio de 4px entre el icono y el texto */
+  font-family: var(--primary-font-bold);
+  /* Define el font del texto*/
+  font-size: 16px;
+  /* Establece el tamaño del font */
+  color: #FAF5E9;
+  /* Color del texto*/
+  text-decoration: none;
+  /* Elimina el subrayado de los enlaces para que solo salga con el hover */
+  margin-left: 25px;
+  /* Añade un margen a la izquierda del enlace */
+  transition: 0.3s;
+  /* Aplica una transición para las interacciones, como cambios de color o transformaciones */
+  position: relative;
+  /* Permite que los elementos dentro del enlace se posicionen de manera relativa al enlace */
 }
 
 .navbar .navbar-brand:hover {
-  color: #FFD166;  /* Cambia el color del texto al poner el raton  */
-  transform: scale(1.05);  /* Aumenta ligeramente el tamaño del enlace al piner el ratón, dando efecto de zoom*/
+  color: #FFD166;
+  /* Cambia el color del texto al poner el raton  */
+  transform: scale(1.05);
+  /* Aumenta ligeramente el tamaño del enlace al piner el ratón, dando efecto de zoom*/
 }
 
 .navbar .navbar-brand::after {
-  content: "";  /* No tiene contenido, pero sirve para crear la línea (Sin esto no funciona la linea que sale debajo)*/
-  position: absolute;  
-  bottom: -4px;  /* Coloca la línea 4px debajo del texto del enlace */
-  left: 50%;  /* Centra la línea horizontalmente dentro del contenedor */
-  width: 100%;  /* La línea tiene el mismo ancho que el enlace */
-  height: 2px;  /* La línea tiene una altura de 2px (es muy fina) */
-  background: #FFD166;  /* Color de la línea*/
-  transform: translateX(-50%) scaleX(0);  /* La línea empieza centrada (translateX) y oculta (scaleX(0)) */
-  transition: 0.3s;  /* La línea se anima durante 0.3 segundos (es la animacion donde sale la linea debajo) */
+  content: "";
+  /* No tiene contenido, pero sirve para crear la línea (Sin esto no funciona la linea que sale debajo)*/
+  position: absolute;
+  bottom: -4px;
+  /* Coloca la línea 4px debajo del texto del enlace */
+  left: 50%;
+  /* Centra la línea horizontalmente dentro del contenedor */
+  width: 100%;
+  /* La línea tiene el mismo ancho que el enlace */
+  height: 2px;
+  /* La línea tiene una altura de 2px (es muy fina) */
+  background: #FFD166;
+  /* Color de la línea*/
+  transform: translateX(-50%) scaleX(0);
+  /* La línea empieza centrada (translateX) y oculta (scaleX(0)) */
+  transition: 0.3s;
+  /* La línea se anima durante 0.3 segundos (es la animacion donde sale la linea debajo) */
 }
 
 .navbar .navbar-brand:hover::after {
-  transform: translateX(-50%) scaleX(1);  /* Al pasar el ratón, la línea se vuelve visible (scaleX(1)) y sigue siendo centrada */
+  transform: translateX(-50%) scaleX(1);
+  /* Al pasar el ratón, la línea se vuelve visible (scaleX(1)) y sigue siendo centrada */
 }
 
 .navbar .navbar-brand img {
-  width: 28px;  /* Establece el ancho de los iconos*/
-  height: 28px;  /* Establece la altura de los iconos*/
-  filter: brightness(0) invert(1);  /* Aplica un filtro de brillo (hace la imagen en blanco y negro) e inversión de colores (iconos oscuros) */
-  transition: 0.3s;  /* Aplica una transición de 0.3 segundos para cualquier */
+  width: 28px;
+  /* Establece el ancho de los iconos*/
+  height: 28px;
+  /* Establece la altura de los iconos*/
+  filter: brightness(0) invert(1);
+  /* Aplica un filtro de brillo (hace la imagen en blanco y negro) e inversión de colores (iconos oscuros) */
+  transition: 0.3s;
+  /* Aplica una transición de 0.3 segundos para cualquier */
 }
 
 .navbar .navbar-brand:hover img {
-  filter: brightness(1.2) /*Aumenta un poco el brillo*/
-  sepia(1) /*Le da al icono un tono marron calido*/
-  hue-rotate(10deg) /*Gira el espectro de colores (esto es copiado de otra pagina, no se si importara mucho)*/
-  saturate(2) /*Aumenta la saturacion de la imagen*/
+  filter: brightness(1.2)
+    /*Aumenta un poco el brillo*/
+    sepia(1)
+    /*Le da al icono un tono marron calido*/
+    hue-rotate(10deg)
+    /*Gira el espectro de colores (esto es copiado de otra pagina, no se si importara mucho)*/
+    saturate(2)
+    /*Aumenta la saturacion de la imagen*/
   ;
 }
