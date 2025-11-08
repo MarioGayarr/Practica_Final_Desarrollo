@@ -6,74 +6,101 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-    <link rel="stylesheet" href="/Practica Final Desarrollo/CSS/StylesWhoAmI.css" />
+
+    <!-- Tus estilos -->
     <link rel="stylesheet" href="/Practica Final Desarrollo/CSS/StyleNavbar.css" />
+    <link rel="stylesheet" href="/Practica Final Desarrollo/CSS/StyleCarousel.css" />
 </head>
 
 <body>
     <header>
-        <div class="d-flex">
-            <div>
-                <nav class="navbar navbar-expand-lg justify-content-end">
-                    <div class="container-fluid">
-                        <div class="navbar-collapse" id="navbarNavAltMarkup">
-                            <div class="navbar-nav">
-                                <a class="navbar-brand active" href="../Index.html">
-                                    <img src="../Assets/Icons/Home.svg" alt="" width="30" height="24"
-                                        class="d-inline-block align-text-top">
-                                    Home
-                                </a>
-                                <a class="navbar-brand" href="Whoami.html">
-                                    <img src="../Assets/Icons/person.svg" alt="" width="30" height="30"
-                                        class="d-inline-block align-text-top">
-                                    ¿Quien soy?
-                                </a>
-                                <a class="navbar-brand" href="Razas.html">
-                                    <img src="../Assets/Icons/perrete.svg" alt="" width="30" height="27"
-                                        class="d-inline-block align-text-top">
-                                    Razas de perros
-                                </a>
-                                <a class="navbar-brand" href="Alimentacion.html">
-                                    <img src="../Assets/Icons/alimentacion.svg" alt="" width="30" height="24"
-                                        class="d-inline-block align-text-top">
-                                    Alimentación
-                                </a>
-                                <a class="navbar-brand" href="Contacto.html">
-                                    <img src="../Assets/Icons/Contacto.svg" alt="" width="30" height="30"
-                                        class="d-inline-block align-text-top">
-                                    Contactanos
-                                </a>
-                            </div>
-                        </div>
-
-
-                    </div>
-                </nav>
-                <div class="d-flex w-100">
-                    <div class="w-50">
-                        <img class="w-100 object-fit-cover" src="/Practica Final Desarrollo/Assets/Pictures/Lobo.jpg"
-                            alt="Foto de Aaron" />
-                    </div>
-                    <div class="w-50">
-                        <img class="w-100 object-fit-cover" src="/Practica Final Desarrollo/Assets/Pictures/Aaron.jpg"
-                            alt="Foto de Lobo" />
+        <!-- 🔹 Navbar fija -->
+        <nav class="navbar navbar-expand-lg justify-content-end">
+            <div class="container-fluid">
+                <div class="navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="navbar-brand active" href="../Index.html">
+                            <img src="../Assets/Icons/Home.svg" alt="" width="30" height="24"
+                                class="d-inline-block align-text-top">
+                            Home
+                        </a>
+                        <a class="navbar-brand" href="Whoami.html">
+                            <img src="../Assets/Icons/person.svg" alt="" width="30" height="30"
+                                class="d-inline-block align-text-top">
+                            ¿Quién soy?
+                        </a>
+                        <a class="navbar-brand" href="Razas.html">
+                            <img src="../Assets/Icons/perrete.svg" alt="" width="30" height="27"
+                                class="d-inline-block align-text-top">
+                            Razas de perros
+                        </a>
+                        <a class="navbar-brand" href="Alimentacion.html">
+                            <img src="../Assets/Icons/alimentacion.svg" alt="" width="30" height="24"
+                                class="d-inline-block align-text-top">
+                            Alimentación
+                        </a>
+                        <a class="navbar-brand" href="Contacto.html">
+                            <img src="../Assets/Icons/Contacto.svg" alt="" width="30" height="30"
+                                class="d-inline-block align-text-top">
+                            Contáctanos
+                        </a>
                     </div>
                 </div>
             </div>
-        </div>
+        </nav>
     </header>
-    <main>
 
+    <main>
+        <!-- 🔹 Carousel de Bootstrap 5 -->
+        <div id="carouselPerros" class="carousel slide" data-bs-ride="true">
+            
+            <!-- Indicadores -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselPerros" data-bs-slide-to="0" class="active" 
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselPerros" data-bs-slide-to="1" 
+                    aria-label="Slide 2"></button>
+            </div>
+
+            <!-- Slides -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/Practica Final Desarrollo/Assets/Pictures/Aaron.jpg" class="d-block w-100" alt="Aaron">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Aaron</h5>
+                        <p>Mi mejor amigo</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="/Practica Final Desarrollo/Assets/Pictures/Lobo.jpg" class="d-block w-100" alt="Lobo">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Lobo</h5>
+                        <p>Mi lloron favorito</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controles de navegación -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselPerros" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselPerros" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+        </div>
     </main>
-    <footer>
-        <!-- place footer here -->
-    </footer>
+
+    <footer></footer>
+
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"></script>
