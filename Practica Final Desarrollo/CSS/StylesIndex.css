@@ -5,7 +5,7 @@ body {
   position: relative;
   /*Se ajusta solo dependiendo de las dimensiones y tal*/
   background-image:
-    linear-gradient(rgba(0, 0, 0, 0.4)),
+    linear-gradient(rgba(0, 0, 0, 0.5)),
     /* capa oscura encima difuminada */
     url('../Assets/Pictures/perrito_fondo.jpeg');
   /* imagen de fondo real */

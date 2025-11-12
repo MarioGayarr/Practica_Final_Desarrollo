@@ -10,6 +10,7 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
         <link rel="stylesheet" href="/Practica Final Desarrollo/CSS/StylesIndex.css" />
         <link rel="stylesheet" href="/Practica Final Desarrollo/CSS/StyleNavbar.css" />
+        <link rel="stylesheet" href="/Practica Final Desarrollo/CSS/StyleCarouselAlimentacion.css">
 </head>
 
 <body >
@@ -52,7 +53,53 @@
         </nav>
     </header>
     <main>
+           <div id="carouselPerros" class="carousel slide" data-bs-ride="true">
+            
+            <!-- Indicadores -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselPerros" data-bs-slide-to="0" class="active" 
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselPerros" data-bs-slide-to="1" 
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselPerros" data-bs-slide-to="2" 
+                    aria-label="Slide 3"></button>
+            </div>
 
+            <!-- Slides -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/Practica Final Desarrollo/Assets/Pictures/perro_lite.jpg" class="d-block w-100" alt="Pequeñin">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Aaron</h5>
+                        <p>Mi mejor amigo</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="/Practica Final Desarrollo/Assets/Pictures/perro_mediano.jpg" class="d-block w-100" alt="Mediano">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Lobo</h5>
+                        <p>Mi lloron favorito</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="/Practica Final Desarrollo/Assets/Pictures/perro_grande.jpg" class="d-block w-100" alt="Grande">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Lobo</h5>
+                        <p>Mi lloron favorito</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controles de navegación -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselPerros" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselPerros" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+        </div>
     </main>
     <footer>
         <!-- place footer here -->
