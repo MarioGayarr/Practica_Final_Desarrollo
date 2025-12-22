@@ -5,100 +5,210 @@
     <title>Perros by Perrotruco</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-        <link rel="stylesheet" href="/Practica Final Desarrollo/CSS/StylesIndex.css" />
-        <link rel="stylesheet" href="/Practica Final Desarrollo/CSS/StyleNavbar.css" />
-        <link rel="stylesheet" href="/Practica Final Desarrollo/CSS/StyleCarouselAlimentacion.css">
+    <link rel="stylesheet" href="/Practica Final Desarrollo/CSS/StylesAliment.css" />
+    <link rel="stylesheet" href="/Practica Final Desarrollo/CSS/StyleNavbar.css" />
+    <link rel="stylesheet" href="/Practica Final Desarrollo/CSS/StyleCarouselAlimentacion.css">
 </head>
 
-<body >
+<body>
     <header>
-       <nav class="navbar navbar-expand-lg justify-content-end">
-            <div class="container-fluid">
-              
-                <div class="navbar-collapse" id="navbarNavAltMarkup">
+    <nav id="mainNavbar" class="navbar navbar-expand-lg">
+        <div class="container-fluid p-0">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" 
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
+            </button>
 
-                    <div class="navbar-nav">
-
-                        <a class="navbar-brand" href="../Index.html">
-                            <img src="../Assets/Icons/Home.svg" alt="" width="30" height="24"
-                                class="d-inline-block align-text-top">
-                            Home
-                        </a>
-                        <a class="navbar-brand" href="/Practica Final Desarrollo/Paginas/Whoami.html">
-                            <img src="../Assets/Icons/person.svg" alt="" width="30" height="30"
-                                class="d-inline-block align-text-top">
-                            ¿Quien soy?
-                        </a>
-                        <a class="navbar-brand" href="/Practica Final Desarrollo/Paginas/Razas.html">
-                            <img src="../Assets/Icons/perrete.svg" alt="" width="30" height="27"
-                                class="d-inline-block align-text-top">
-                            Razas de perros
-                        </a>
-                        <a class="navbar-brand" href="/Practica Final Desarrollo/Paginas/Alimentacion.html">
-                            <img src="../Assets/Icons/alimentacion.svg" alt="" width="30" height="24"
-                                class="d-inline-block align-text-top">
-                            Alimentación
-                        </a>
-                        <a class="navbar-brand" href="/Practica Final Desarrollo/Paginas/Contacto.html">
-                            <img src="../Assets/Icons/Contacto.svg" alt="" width="30" height="30"
-                                class="d-inline-block align-text-top">
-                            Contactanos
-                        </a>
-                    </div>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="navbar-brand" href="../Index.html">
+                        <img src="../Assets/Icons/Home.svg" alt="" width="28" height="28">
+                        Home
+                    </a>
+                    <a class="navbar-brand" href="/Practica Final Desarrollo/Paginas/Whoami.html">
+                        <img src="../Assets/Icons/person.svg" alt="" width="28" height="28">
+                        ¿Quien soy?
+                    </a>
+                    <a class="navbar-brand" href="/Practica Final Desarrollo/Paginas/Razas.html">
+                        <img src="../Assets/Icons/perrete.svg" alt="" width="28" height="28">
+                        Razas
+                    </a>
+                    <a class="navbar-brand" href="/Practica Final Desarrollo/Paginas/Alimentacion.html">
+                        <img src="../Assets/Icons/alimentacion.svg" alt="" width="28" height="28">
+                        Alimentación
+                    </a>
+                    <a class="navbar-brand" href="/Practica Final Desarrollo/Paginas/Contacto.html">
+                        <img src="../Assets/Icons/Contacto.svg" alt="" width="28" height="28">
+                        Contactanos
+                    </a>
                 </div>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
+</header>
     <main>
-           <div id="carouselPerros" class="carousel slide" data-bs-ride="true">
-            
-            <!-- Indicadores -->
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselPerros" data-bs-slide-to="0" class="active" 
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselPerros" data-bs-slide-to="1" 
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselPerros" data-bs-slide-to="2" 
-                    aria-label="Slide 3"></button>
-            </div>
+        <div class="content-layout">
 
-            <!-- Slides -->
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="/Practica Final Desarrollo/Assets/Pictures/perro_lite.jpg" class="d-block w-100" alt="Pequeñin">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Aaron</h5>
-                        <p>Mi mejor amigo</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="/Practica Final Desarrollo/Assets/Pictures/perro_mediano.jpg" class="d-block w-100" alt="Mediano">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Lobo</h5>
-                        <p>Mi lloron favorito</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="/Practica Final Desarrollo/Assets/Pictures/perro_grande.jpg" class="d-block w-100" alt="Grande">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Lobo</h5>
-                        <p>Mi lloron favorito</p>
-                    </div>
-                </div>
-            </div>
+            <section class="intro-text-column">
+                <h1 class="main-title">Nutrición según su tamaño</h1>
+                <p class="main-description">
+                    No todos los perros son iguales, y su alimentación tampoco debería serlo.
+                    El metabolismo de un perro pequeño es muy diferente al de uno gigante.
+                    Elige la categoría de tu mejor amigo a la derecha para descubrir las recomendaciones nutricionales
+                    específicas para su peso y tamaño.
+                </p>
+            </section>
 
-            <!-- Controles de navegación -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselPerros" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Anterior</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselPerros" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Siguiente</span>
-            </button>
+            <section class="custom-slider-wrapper" id="hero-slider">
+
+
+                <div class="slider">
+                    <div class="track" id="track">
+                        <article class="project-card" active>
+                            <img class="project-card__bg"
+                                src="/Practica Final Desarrollo/Assets/Pictures/perro_lite.jpg" alt="Perro pequeño">
+                            <div class="project-card__content">
+                                <div>
+                                    <h3 class="project-card__title">Perros pequeños</h3>
+                                    <p class="project-card__desc">Alta densidad energética para metabolismos acelerados.
+                                    </p>
+                                    <a href="#small-breed" class="project-card__btn">Ver Recomendaciones</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="project-card">
+                            <img class="project-card__bg"
+                                src="/Practica Final Desarrollo/Assets/Pictures/perro_mediano.jpg" alt="Perro mediano">
+                            <div class="project-card__content">
+                                <div>
+                                    <h3 class="project-card__title">Perros Medianos</h3>
+                                    <p class="project-card__desc">Equilibrio perfecto para mantener su vitalidad y peso
+                                        ideal.</p>
+                                    <a href="#medium-breed" class="project-card__btn">Ver Recomendaciones</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="project-card">
+                            <img class="project-card__bg"
+                                src="/Practica Final Desarrollo/Assets/Pictures/perro_grande.jpg" alt="Perro grande">
+                            <div class="project-card__content">
+                                <div>
+                                    <h3 class="project-card__title">Perros Grandes</h3>
+                                    <p class="project-card__desc">Soporte articular y control de crecimiento óseo.</p>
+                                    <a href="#large-breed" class="project-card__btn">Ver Recomendaciones</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <div class="dots" id="dots"></div>
+            </section>
+
+        </div>
+        <div class="details-container">
+
+            <section id="small-breed" class="info-section">
+                <h2 class="section-header">🐶 Perros Pequeños (< 10kg)</h2>
+                        <p class="section-desc">Metabolismo muy rápido. Requieren croquetas pequeñas y alta densidad
+                            calórica.</p>
+                        <div class="table-responsive">
+                            <table class="table table-dark table-hover custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>Peso del Perro</th>
+                                        <th>Cantidad Diaria (g)</th>
+                                        <th>Ingrediente Clave</th>
+                                        <th>Frecuencia</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1 - 5 kg</td>
+                                        <td>40g - 110g</td>
+                                        <td>Proteína de fácil digestión</td>
+                                        <td>3 veces al día</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5 - 10 kg</td>
+                                        <td>110g - 190g</td>
+                                        <td>Ácidos grasos (piel sana)</td>
+                                        <td>2 veces al día</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+            </section>
+
+            <section id="medium-breed" class="info-section">
+                <h2 class="section-header">🐕 Perros Medianos (10 - 25kg)</h2>
+                <p class="section-desc">Nivel de actividad moderado-alto. Equilibrio entre proteínas y grasas.</p>
+                <div class="table-responsive">
+                    <table class="table table-dark table-hover custom-table">
+                        <thead>
+                            <tr>
+                                <th>Peso del Perro</th>
+                                <th>Cantidad Diaria (g)</th>
+                                <th>Ingrediente Clave</th>
+                                <th>Frecuencia</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>10 - 15 kg</td>
+                                <td>190g - 260g</td>
+                                <td>Fibra equilibrada</td>
+                                <td>2 veces al día</td>
+                            </tr>
+                            <tr>
+                                <td>15 - 25 kg</td>
+                                <td>260g - 380g</td>
+                                <td>Antioxidantes naturales</td>
+                                <td>2 veces al día</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="large-breed" class="info-section">
+                <h2 class="section-header">🦮 Perros Grandes (> 25kg)</h2>
+                <p class="section-desc">Crecimiento prolongado. Requieren control calórico y soporte articular.</p>
+                <div class="table-responsive">
+                    <table class="table table-dark table-hover custom-table">
+                        <thead>
+                            <tr>
+                                <th>Peso del Perro</th>
+                                <th>Cantidad Diaria (g)</th>
+                                <th>Ingrediente Clave</th>
+                                <th>Frecuencia</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>25 - 40 kg</td>
+                                <td>380g - 550g</td>
+                                <td>Glucosamina y Condroitina</td>
+                                <td>2 veces al día</td>
+                            </tr>
+                            <tr>
+                                <td>+ 40 kg</td>
+                                <td>550g - 900g</td>
+                                <td>Proteína magra</td>
+                                <td>2 veces al día</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
         </div>
     </main>
     <footer>
@@ -112,5 +222,7 @@
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"></script>
 </body>
+<script src="/Practica Final Desarrollo/JS/Carousel.js"></script>
+<script src="/Practica Final Desarrollo/JS/Navbar.js"></script>
 
 </html>

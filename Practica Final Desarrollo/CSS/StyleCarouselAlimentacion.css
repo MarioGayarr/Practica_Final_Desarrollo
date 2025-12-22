@@ -1,132 +1,164 @@
-.carousel {
-  position: relative;
-  /* Evita que se superponga a otros elementos */
-  z-index: 1;
-  /* Mantiene el carousel DEBAJO del navbar (el navbar tiene z-index mayor) */
+/* --- Configuración Global y Main --- */
+html {
+  scroll-behavior: smooth; /* Desplazamiento suave al hacer clic en los botones */
 }
 
-/* Las imágenes se muestran completas sin recortes */
-.carousel-item img {
-  width: 100%;
-  /* La imagen ocupa todo el ancho disponible del carousel */
-  height: 100vh;
-  /* Altura fija de 500px para todas las imágenes */
-  object-fit: contain;
-  /* Mantiene la imagen completa sin recortar, respetando sus proporciones */
-  background-color: #f8f9fa;
-  /* Fondo gris claro para visualizar el área de la imagen */
-}
-
-/* Centra el carousel en la pantalla */
 main {
   display: flex;
-  /* Utiliza Flexbox para centrar el contenido */
-  justify-content: center;
-  /* Centra el carousel horizontalmente */
-  align-items: center;
-  /* Centra el carousel verticalmente */
-  min-height: calc(100vh - 60px);
-  /* Ocupa toda la altura de la ventana menos 60px del navbar */
-  padding: 20px;
-  /* Añade 20px de espacio alrededor del carousel */
-}
-
-/* El carousel ocupa solo el espacio necesario */
-.carousel {
-  max-width: 100%;
-  /* Ancho máximo del carousel de 1200px */
-  width: 100vh;
-  /* Ocupa el 100% del ancho disponible hasta el máximo */
-}
-
-/* Ajusta el contenedor del carousel */
-.carousel-inner {
+  flex-direction: column; /* IMPORTANTE: Apila los bloques verticalmente */
+  align-items: center;    
+  width: 100%;
+  padding: 40px 20px;
   background-color: transparent;
-  /* Fondo transparente para el contenedor de slides */
+  gap: 80px; /* Espacio entre el bloque del carrusel y las tablas */
 }
 
-.carousel-item {
-  height: 100vh;
-  /* Altura fija de 500px igual que las imágenes */
-  transition: transform 0.6s ease-in-out;
-  /* Transición suave de 0.6 segundos al cambiar de slide */
+/* --- BLOQUE SUPERIOR (Texto + Carrusel) --- */
+.content-layout {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  max-width: 1400px;
+  width: 100%;
 }
 
-/* Animación de entrada desde la derecha */
-.carousel-item-next:not(.carousel-item-start) {
-  transform: translateX(100%);
-  /* Mueve el siguiente slide 100% hacia la derecha antes de entrar */
+/* Columna Izquierda: Texto */
+.intro-text-column {
+  flex: 0 1 450px;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.7);
+  text-align: left;
+}
+.main-title { font-size: 3rem; font-weight: 800; margin-bottom: 1.5rem; line-height: 1.1; }
+.main-description { font-size: 1.2rem; line-height: 1.6; opacity: 0.9; }
+
+/* Columna Derecha: Carrusel */
+.custom-slider-wrapper {
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 900px;
+  --gap: 1rem; --speed: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --closed: 5rem; --open: 28rem; --accent: #ff6b35; --text-primary: #fff;
+  font-family: inherit;
+}
+/* Controles carrusel */
+.slider-controls-container { padding: 0 0 20px 0; display: flex; justify-content: flex-end; }
+.controls { display: flex; gap: 0.5rem; }
+.nav-btn { width: 3rem; height: 3rem; border: none; border-radius: 50%; background: rgba(255,255,255,0.1); color: #fff; font-size: 1.5rem; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: 0.3s; }
+.nav-btn:hover { background: var(--accent); }
+
+/* Track y Cards */
+.slider { width: 100%; overflow: hidden; padding-bottom: 20px; }
+.track { display: flex; gap: var(--gap); padding: 0 10px; justify-content: flex-start; }
+
+.project-card { position: relative; flex: 0 0 var(--closed); height: 450px; border-radius: 1rem; overflow: hidden; cursor: pointer; transition: flex-basis var(--speed), transform var(--speed); background: #000; }
+.project-card[active] { flex-basis: var(--open); box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
+.project-card__bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.6) saturate(80%); transition: filter 0.3s, transform var(--speed); }
+.project-card:hover .project-card__bg { filter: brightness(0.9) saturate(100%); transform: scale(1.05); }
+
+.project-card__content { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; background: linear-gradient(to top, rgba(0,0,0,0.9), transparent 60%); z-index: 2; transition: all var(--speed); }
+.project-card__title { color: var(--text-primary); font-weight: 700; font-size: 1.5rem; writing-mode: vertical-rl; transform: rotate(180deg); white-space: nowrap; transition: transform 0.3s; }
+
+/* Elementos ocultos */
+.project-card__desc, .project-card__btn { opacity: 0; visibility: hidden; transform: translateY(20px); position: absolute; transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s; }
+
+/* Active State */
+.project-card[active] .project-card__content { flex-direction: row; align-items: center; justify-content: center; text-align: center; padding: 2rem; gap: 1.5rem; background: linear-gradient(to right, rgba(0,0,0,0.8) 20%, rgba(0,0,0,0.6)); }
+.project-card[active] .project-card__content > div { display: flex; flex-direction: column; align-items: center; width: 100%; }
+.project-card[active] .project-card__title { writing-mode: horizontal-tb; transform: none; font-size: 2rem; margin-bottom: 1rem; }
+.project-card[active] .project-card__desc, .project-card[active] .project-card__btn { opacity: 1; visibility: visible; transform: translateY(0); position: relative; transition-delay: 0.3s; width: auto; }
+.project-card__desc { font-size: 1rem; line-height: 1.5; color: #ddd; margin-bottom: 1.5rem; max-width: 90%; }
+/* Botón dentro del carrusel */
+.project-card__btn { display: inline-block; text-decoration: none; padding: 0.6rem 1.8rem; background: var(--accent); color: white; border: none; border-radius: 50px; font-weight: 600; cursor: pointer; }
+.project-card__btn:hover { background: #ff824f; color: #fff; }
+
+.dots { display: flex; gap: 0.5rem; justify-content: center; margin-top: 10px;}
+.dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.3); cursor: pointer; transition: 0.3s; }
+.dot.active { background: var(--accent); transform: scale(1.3); }
+
+
+/* --- BLOQUE INFERIOR (Tablas) --- */
+.details-container {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    padding-bottom: 40px;
 }
 
-/* Animación de entrada desde la izquierda */
-.carousel-item-prev:not(.carousel-item-end) {
-  transform: translateX(-100%);
-  /* Mueve el slide anterior 100% hacia la izquierda antes de entrar */
+.info-section {
+    background: rgba(0, 0, 0, 0.75); /* Fondo semitransparente oscuro */
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.1);
+    /* Scroll margin para que el navbar fijo no tape el título al hacer scroll */
+    scroll-margin-top: 100px; 
 }
 
-/* Efecto de desvanecimiento adicional */
-.carousel-item {
-  opacity: 0;
-  /* Los slides empiezan invisibles */
-  transition: opacity 0.8s ease-in-out, transform 0.6s ease-in-out;
-  /* Transición de opacidad (0.8s) y movimiento (0.6s) */
+.section-header {
+    color: var(--accent);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
 }
 
-.carousel-item.active {
-  opacity: 1;
-  /* El slide activo se vuelve completamente visible */
+.section-desc {
+    color: #e0e0e0;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
 }
 
-/* Animación de zoom sutil al cambiar */
-.carousel-item img {
-  transition: transform 0.6s ease-in-out;
-  /* Transición suave para el efecto de zoom en la imagen */
+/* Personalización de Tabla Bootstrap */
+.custom-table {
+    margin-bottom: 0;
+    background-color: transparent !important;
 }
 
-.carousel-item.active img {
-  animation: zoomIn 0.8s ease-out;
-  /* Aplica la animación de zoom cuando el slide está activo */
+.custom-table th {
+    background-color: rgba(255, 107, 53, 0.2); /* Un toque del color de acento */
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    border-bottom: 2px solid var(--accent);
 }
 
-/* Define la animación de zoom */
-@keyframes zoomIn {
-  from {
-    transform: scale(0.95);
-    /* La imagen empieza al 95% de su tamaño */
-    opacity: 0.8;
-    /* La imagen empieza con 80% de opacidad */
-  }
-  to {
-    transform: scale(1);
-    /* La imagen termina al 100% de su tamaño (tamaño normal) */
-    opacity: 1;
-    /* La imagen termina completamente visible */
-  }
+.custom-table td {
+    background-color: transparent;
+    color: #ddd;
+    vertical-align: middle;
+    border-color: rgba(255,255,255,0.1);
 }
 
-/* Asegura que las flechas sean visibles y funcionales */
-.carousel-control-prev,
-.carousel-control-next {
-  z-index: 10;
-  /* Las flechas están por encima del contenido del carousel */
-  width: 10%;
-  /* Área clickeable más grande (10% del ancho del carousel) */
+.custom-table tr:hover td {
+    background-color: rgba(255,255,255,0.05);
+    color: #fff;
 }
 
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  background-color: rgba(0, 0, 0, 0.5);
-  /* Fondo negro con 50% de opacidad para que las flechas se vean mejor */
-  border-radius: 50%;
-  /* Hace que el fondo de las flechas sea circular */
-  padding: 20px;
-  /* Añade 20px de espacio alrededor del icono de la flecha */
+/* --- RESPONSIVE --- */
+@media (max-width: 991px) {
+  .content-layout { flex-direction: column; gap: 40px; }
+  .intro-text-column { flex: 0 0 auto; max-width: 100%; text-align: center; }
+  .main-title { font-size: 2.2rem; }
+  .custom-slider-wrapper { width: 100%; max-width: 100%; }
+  .slider-controls-container { justify-content: center; }
 }
 
-/* Asegura que el navbar esté siempre visible */
-header {
-  position: relative;
-  /* Permite que el navbar se posicione de manera relativa */
-  z-index: 1000;
-  /* Prioridad máxima para que el navbar esté siempre por encima */
+@media (max-width: 767px) {
+  main { padding: 20px 10px; gap: 40px; }
+  .custom-slider-wrapper { --closed: 100%; --open: 100%; }
+  .track { flex-direction: column; }
+  .project-card { width: 100%; height: 80px; flex: 0 0 80px; margin-bottom: 10px; }
+  .project-card[active] { height: 420px; flex: 0 0 420px; }
+  .project-card__title { writing-mode: horizontal-tb; transform: none; font-size: 1.2rem; position: absolute; left: 20px; }
+  .project-card[active] .project-card__content { flex-direction: column; padding: 20px; }
+  .slider-controls-container, .dots { display: none; }
+  
+  /* Ajuste tablas móvil */
+  .info-section { padding: 20px 15px; }
+  .section-header { font-size: 1.5rem; }
 }

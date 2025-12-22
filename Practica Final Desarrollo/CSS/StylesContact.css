@@ -1,0 +1,121 @@
+body {
+  height: 100vh;
+  /* hace que cubra toda la altura visible */
+  width: 100%;
+  position: relative;
+  /*Se ajusta solo dependiendo de las dimensiones y tal*/
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.5)),
+    /* capa oscura encima difuminada */
+    url('../Assets/Pictures/FondoContacto.jpg');
+  /* imagen de fondo real */
+  background-size: cover;
+  /* cubre toda la pantalla */
+  background-position: center;
+  /* centra la imagen */
+  background-repeat: no-repeat;
+  /* La foto no se repite */
+  background-attachment: fixed;
+  /* Hace que la foto al hacer scroll se deslize mas lento */
+
+}
+/* Hereda el body del estilo global que enviaste, aquí añadimos ajustes específicos */
+
+/* Tarjetas con efecto Glassmorphism */
+.glass-card {
+    background: rgba(0, 0, 0, 0.65); /* Fondo oscuro semitransparente */
+    backdrop-filter: blur(15px);     /* Efecto borroso detrás */
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    overflow: hidden;
+}
+
+/* Imagen de perfil redonda y estilizada */
+.profile-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #FFD166; /* Color amarillo de tu marca */
+    box-shadow: 0 0 20px rgba(255, 209, 102, 0.4);
+}
+
+/* Estilos de Texto */
+.text-warning {
+    color: #FFD166 !important;
+}
+
+.justification-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #e0e0e0;
+    text-align: justify;
+}
+
+/* --- Personalización de Inputs (Floating Labels) --- */
+
+/* 1. Estilo base del input (la caja) */
+.form-floating > .form-control {
+    /* Fondo negro transparente para contraste */
+    background-color: rgba(0, 0, 0, 0.4); 
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff; /* Texto blanco */
+    
+    /* Tu transición fluida */
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* 2. Estilo cuando haces clic (FOCUS) */
+.form-floating > .form-control:focus {
+    background-color: rgba(0, 0, 0, 0.6); /* Un poco más oscuro al seleccionar */
+    border-color: #FFD166; /* Borde amarillo */
+    box-shadow: 0 0 20px rgba(255, 209, 102, 0.25); /* Brillo exterior */
+    color: #fff;
+    outline: none;
+}
+
+/* 3. Estilo de la etiqueta (Label) en reposo */
+.form-floating > label {
+    color: rgba(255, 255, 255, 0.6);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* 4. SOLUCIÓN AL CUADRADO BLANCO (Bootstrap añade un ::after con fondo, aquí lo quitamos) */
+.form-floating > label::after {
+    background-color: transparent !important; /* ¡ESTO QUITA EL PARCHE BLANCO! */
+}
+
+/* 5. Estilo de la etiqueta cuando flota (focus o con texto) */
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label {
+    color: rgba(255, 255, 255, 0.5); /* Gris claro */
+    background-color: transparent; /* Fondo transparente */
+    
+    /* Ajuste de posición */
+    transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+    opacity: 1;
+}
+
+/* 6. Corrección para el Autocompletado (El fondo blanco de Chrome/Edge) */
+.form-floating > .form-control:-webkit-autofill {
+    /* Fuerza el fondo oscuro en el autocompletado */
+    -webkit-text-fill-color: #fff !important;
+    -webkit-box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.6) inset !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+/* 7. Ajuste para Select/Datalist (opcional, por si acaso) */
+.form-floating > .form-select {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+#mensajeExito {
+    background-color: rgba(25, 135, 84, 0.8); /* Verde semitransparente */
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+}

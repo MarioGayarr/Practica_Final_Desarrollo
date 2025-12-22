@@ -1,96 +1,165 @@
-.navbar {
-  position: fixed;
-  /*Navbar fija al hacer scroll */
-  top: 20px;
-  /* Coloca la navbar 20px hacia abajo desde el borde superior de la pantalla */
-  right: 20px;
-  /* Coloca la navbar 20px desde el borde derecho de la pantalla */
-  display: flex;
-  /* Alinear los elementos dentro de la navbar */
-  background: rgba(0, 0, 0, 0.25);
-  /* Fondo de la navbar, negro con 25% de opacidad, da sensacion de transparencia */
-  backdrop-filter: blur(30px);
-  /* Blur a lo que está detrás de la navbar */
-  padding: 12px 24px;
-  /* Añade 12px de espacio arriba y abajo y 24px a los lados dentro de la navbar */
-  border-radius: 100px;
-  /* Redondea los bordes de la navbar*/
+/* --- 1. Hueco superior para el contenido --- */
+body {
+    padding-top: 100px;
+    position: relative;
 }
 
+/* --- 2. Configuración del Navbar (La Píldora) --- */
+.navbar {
+    position: fixed;
+    top: 20px;
+    right: 30px; /* Lo moví un poco más a la izquierda (antes 20px) para que no esté tan pegado al borde */
+    z-index: 1000;
+    
+    /* "fit-content" es clave: la caja solo será tan grande como su contenido necesite */
+    width: fit-content; 
+    max-width: 90vw; /* Evita que se salga en pantallas muy pequeñas */
+    
+    background: rgba(0, 0, 0, 0.3); /* Un poco más opaco para que se lea mejor el menú */
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    
+    /* Reduje el padding para que la caja sea más compacta */
+    padding: 8px 15px; 
+    border-radius: 30px; /* Bordes un poco menos exagerados para ahorrar espacio */
+    
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* --- 3. Estilos de los Enlaces (Items del menú) --- */
 .navbar .navbar-brand {
-  display: flex;
-  /* Utiliza Flexbox para alinear los elementos */
-  align-items: center;
-  /* Centra los elementos dentro del enlace */
-  gap: 4px;
-  /* Añade un espacio de 4px entre el icono y el texto */
-  font-family: var(--primary-font-bold);
-  /* Define el font del texto*/
-  font-size: 16px;
-  /* Establece el tamaño del font */
-  color: #FAF5E9;
-  /* Color del texto*/
-  text-decoration: none;
-  /* Elimina el subrayado de los enlaces para que solo salga con el hover */
-  margin-left: 25px;
-  /* Añade un margen a la izquierda del enlace */
-  transition: 0.3s;
-  /* Aplica una transición para las interacciones, como cambios de color o transformaciones */
-  position: relative;
-  /* Permite que los elementos dentro del enlace se posicionen de manera relativa al enlace */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centramos el contenido del enlace */
+    gap: 8px;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 15px; /* Un pelín más pequeño para compactar */
+    color: #FAF5E9;
+    text-decoration: none;
+    
+    /* Márgenes verticales reducidos para que la lista no sea kilométrica */
+    margin: 4px 0; 
+    transition: 0.3s;
+    position: relative;
+    width: 100%; /* Ocupa el ancho disponible para facilitar el click */
 }
 
 .navbar .navbar-brand:hover {
-  color: #FFD166;
-  /* Cambia el color del texto al poner el raton  */
-  transform: scale(1.05);
-  /* Aumenta ligeramente el tamaño del enlace al piner el ratón, dando efecto de zoom*/
+    color: #FFD166;
+    transform: scale(1.05);
 }
 
+/* Línea animada debajo del texto */
 .navbar .navbar-brand::after {
-  content: "";
-  /* No tiene contenido, pero sirve para crear la línea (Sin esto no funciona la linea que sale debajo)*/
-  position: absolute;
-  bottom: -4px;
-  /* Coloca la línea 4px debajo del texto del enlace */
-  left: 50%;
-  /* Centra la línea horizontalmente dentro del contenedor */
-  width: 100%;
-  /* La línea tiene el mismo ancho que el enlace */
-  height: 2px;
-  /* La línea tiene una altura de 2px (es muy fina) */
-  background: #FFD166;
-  /* Color de la línea*/
-  transform: translateX(-50%) scaleX(0);
-  /* La línea empieza centrada (translateX) y oculta (scaleX(0)) */
-  transition: 0.3s;
-  /* La línea se anima durante 0.3 segundos (es la animacion donde sale la linea debajo) */
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 100%;
+    height: 2px;
+    background: #FFD166;
+    transform: translateX(-50%) scaleX(0);
+    transition: 0.3s;
 }
 
 .navbar .navbar-brand:hover::after {
-  transform: translateX(-50%) scaleX(1);
-  /* Al pasar el ratón, la línea se vuelve visible (scaleX(1)) y sigue siendo centrada */
+    transform: translateX(-50%) scaleX(0.75); /* Línea más corta para que quede elegante */
 }
 
+/* Iconos */
 .navbar .navbar-brand img {
-  width: 28px;
-  /* Establece el ancho de los iconos*/
-  height: 28px;
-  /* Establece la altura de los iconos*/
-  filter: brightness(0) invert(1);
-  /* Aplica un filtro de brillo (hace la imagen en blanco y negro) e inversión de colores (iconos oscuros) */
-  transition: 0.3s;
-  /* Aplica una transición de 0.3 segundos para cualquier */
+    width: 20px; /* Iconos un poco más pequeños */
+    height: 20px;
+    filter: brightness(0) invert(1);
+    transition: 0.3s;
 }
 
 .navbar .navbar-brand:hover img {
-  filter: brightness(1.2)
-    /*Aumenta un poco el brillo*/
-    sepia(1)
-    /*Le da al icono un tono marron calido*/
-    hue-rotate(10deg)
-    /*Gira el espectro de colores (esto es copiado de otra pagina, no se si importara mucho)*/
-    saturate(2)
-    /*Aumenta la saturacion de la imagen*/
-  ;
+    filter: brightness(1.2) sepia(1) hue-rotate(10deg) saturate(2);
+}
+
+/* --- 4. Botón Hamburguesa --- */
+.navbar-toggler {
+    border: none;
+    padding: 5px;
+    outline: none;
+    box-shadow: none !important;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+    
+    margin: 0 auto; /* Centrado automático */
+    width: 40px; 
+    height: 40px;
+}
+
+.toggler-icon {
+    width: 22px; /* Rayitas un poco más cortas */
+    height: 2px; /* Rayitas más finas */
+    background-color: #FAF5E9;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.navbar-toggler:hover .toggler-icon {
+    background-color: #FFD166;
+}
+
+/* --- 5. Lógica del Menú Desplegado (Collapse) --- */
+
+/* Contenedor colapsable */
+.navbar-collapse {
+    flex-basis: 100%;
+    flex-grow: 1;
+}
+
+/* Cuando se abre el menú */
+.navbar-collapse.show {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255,255,255,0.1); /* Línea divisoria sutil */
+    
+    /* Animación de entrada */
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* La lista de enlaces */
+.navbar-nav {
+    display: flex;
+    /* IMPORTANTE: Centramos todo verticalmente para que quede alineado con el botón */
+    flex-direction: column;
+    align-items: center; 
+    gap: 5px; /* Menos espacio entre elementos */
+    padding-bottom: 5px;
+}
+
+/* Ajustes cuando está en modo barra horizontal (Desktop grande sin scroll) */
+.navbar-expand-lg .navbar-collapse {
+    display: flex !important;
+    flex-basis: auto;
+}
+
+.navbar-expand-lg .navbar-nav {
+    flex-direction: row;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Animación suave para la aparición */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Ajuste específico para móvil o modo comprimido */
+.navbar:not(.navbar-expand-lg) .navbar-nav {
+    align-items: center; /* Fuerza el centrado de los textos en la caja */
+    width: 100%;
 }

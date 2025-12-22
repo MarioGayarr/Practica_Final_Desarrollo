@@ -1,0 +1,21 @@
+body {
+  height: 100vh;
+  /* hace que cubra toda la altura visible */
+  width: 100%;
+  position: relative;
+  /*Se ajusta solo dependiendo de las dimensiones y tal*/
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.5)),
+    /* capa oscura encima difuminada */
+    url('../Assets/Pictures/FondoAlimentacion.jpg');
+  /* imagen de fondo real */
+  background-size: cover;
+  /* cubre toda la pantalla */
+  background-position: center;
+  /* centra la imagen */
+  background-repeat: no-repeat;
+  /* La foto no se repite */
+  background-attachment: fixed;
+  /* Hace que la foto al hacer scroll se deslize mas lento */
+
+}
