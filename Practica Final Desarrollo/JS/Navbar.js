@@ -1,31 +1,47 @@
+$(document).ready(function() {
     // Seleccionamos el navbar
-    const navbar = document.getElementById('mainNavbar');
-    // Guardamos la clase de expansión original
+    const $navbar = $('#mainNavbar');
     const expandClass = 'navbar-expand-lg';
 
-    window.addEventListener('scroll', () => {
-        // Obtenemos el ancho de la ventana
-        const width = window.innerWidth;
+    // Función para verificar si el navbar cabe en la pantalla
+    function navbarFitsOnScreen() {
+        return $(window).width() >= 992; // Bootstrap lg breakpoint
+    }
 
-        // Si el scroll es mayor a 50px
-        if (window.scrollY > 50) {
-            // Quitamos la clase que lo mantiene horizontal
-            // Esto fuerza a Bootstrap a mostrar el botón hamburguesa
-            navbar.classList.remove(expandClass);
-        } else {
-            // Si volvemos arriba Y la pantalla es grande
-            if (width >= 992) { 
-                // Devolvemos la barra horizontal
-                navbar.classList.add(expandClass);
+    // Función para actualizar el estado del navbar
+    function updateNavbar() {
+        const fitsOnScreen = navbarFitsOnScreen();
+        const isScrolled = $(window).scrollTop() > 50;
+
+        if (fitsOnScreen) {
+            // El navbar CABE en la pantalla
+            if (isScrolled) {
+                // Excepción: Aunque cabe, si hay scroll, comprimimos
+                $navbar.removeClass(expandClass);
+            } else {
+                // Sin scroll y cabe: expandimos
+                $navbar.addClass(expandClass);
                 
-                // Opcional: Cerrar el menú si estaba abierto al volver arriba
-                const collapseElement = document.getElementById('navbarNavAltMarkup');
-                if (collapseElement.classList.contains('show')) {
-                    const bsCollapse = new bootstrap.Collapse(collapseElement, {
-                        toggle: false
-                    });
-                    bsCollapse.hide();
+                // Cerrar el menú si estaba abierto
+                const $collapseElement = $('#navbarNavAltMarkup');
+                if ($collapseElement.hasClass('show')) {
+                    $collapseElement.collapse('hide');
                 }
             }
+        } else {
+            // El navbar NO cabe: siempre comprimido
+            $navbar.removeClass(expandClass);
         }
-    });
+    }
+
+    // Escuchar scroll
+    $(window).on('scroll', updateNavbar);
+
+    // Escuchar cambios de tamaño de ventana
+    $(window).on('resize', updateNavbar);
+
+    // Ejecutar solo si la pantalla es pequeña
+    if (!navbarFitsOnScreen()) {
+        updateNavbar();
+    }
+});

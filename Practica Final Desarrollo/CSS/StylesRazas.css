@@ -1,0 +1,279 @@
+/* --- CAMBIOS EN LA REJILLA --- */
+/* Grid responsive usando Bootstrap breakpoints */
+.breeds-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 15px;
+    width: 100%;
+    grid-auto-flow: dense;
+    scroll-behavior: smooth;
+}
+
+/* Tablet - 4 columnas */
+@media (max-width: 1024px) {
+    .breeds-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Tablet pequeño/móvil grande - 3 columnas */
+@media (max-width: 768px) {
+    .breeds-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Móvil - 2 columnas */
+@media (max-width: 576px) {
+    .breeds-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+}
+
+/* Móvil muy pequeño - 1 columna */
+@media (max-width: 380px) {
+    .breeds-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- TARJETA BASE --- */
+.breed-card {
+    position: relative;
+    height: 250px;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    background: #000;
+    cursor: pointer;
+    scroll-margin-top: 120px; /* Espacio para el navbar al hacer scroll */
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                opacity 0.4s ease, 
+                filter 0.4s ease, 
+                border-color 0.4s ease, 
+                box-shadow 0.4s ease,
+                grid-column 0s,
+                grid-row 0s;
+}
+
+.img-wrapper {
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: hidden;
+}
+
+.breed-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+/* --- EFECTO HOVER --- */
+.breed-card:hover:not(.dimmed):not(.expanded) img {
+    transform: scale(1.1);
+}
+
+.breed-card:hover:not(.dimmed):not(.expanded) {
+    border-color: #FFD166;
+    box-shadow: 0 0 25px rgba(255, 209, 102, 0.3);
+    transform: translateY(-5px);
+}
+
+/* Mostrar información en hover */
+.breed-card:hover:not(.dimmed):not(.expanded) .breed-info {
+    opacity: 1;
+    transform: translateY(0);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.7));
+}
+
+.breed-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4));
+    color: #fff;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.breed-info h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #FFD166;
+    margin-bottom: 5px;
+}
+
+.breed-info .audience {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #ccc;
+    margin-bottom: 5px;
+}
+
+.breed-info .desc {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #e0e0e0;
+}
+
+/* --- ESTADO 1: TARJETA EXPANDIDA (CLICK) --- */
+.breed-card.expanded {
+    grid-column: span 2;
+    grid-row: span 2;
+    height: auto;
+    min-height: 500px;
+    z-index: 10;
+    border-color: #FFD166;
+    box-shadow: 0 0 30px rgba(255, 209, 102, 0.3);
+    transform: scale(1);
+    opacity: 1;
+    filter: none;
+    animation: expandCard 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.breed-card.expanded .img-wrapper {
+    height: 50%;
+    position: relative;
+    overflow: hidden;
+    animation: expandImage 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.breed-card.expanded .img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    animation: zoomImage 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.breed-card.expanded .breed-info {
+    opacity: 1;
+    transform: translateY(0);
+    position: relative;
+    height: auto;
+    max-height: calc(50% - 10px);
+    background: rgba(0,0,0,0.95);
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 20px;
+    animation: slideUpInfo 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    
+    /* Estilos personalizados del scrollbar */
+    scrollbar-width: thin;
+    scrollbar-color: #FFD166 rgba(255, 255, 255, 0.1);
+}
+
+/* Scrollbar para Webkit (Chrome, Safari, Edge) */
+.breed-card.expanded .breed-info::-webkit-scrollbar {
+    width: 8px;
+}
+
+.breed-card.expanded .breed-info::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+.breed-card.expanded .breed-info::-webkit-scrollbar-thumb {
+    background: #FFD166;
+    border-radius: 10px;
+    transition: background 0.3s;
+}
+
+.breed-card.expanded .breed-info::-webkit-scrollbar-thumb:hover {
+    background: #ffc233;
+}
+
+.details-content {
+    display: none;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #ccc;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.breed-card.expanded .details-content {
+    display: block;
+}
+
+/* Responsive para tarjeta expandida */
+@media (max-width: 768px) {
+    .breed-card.expanded {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+}
+
+@media (max-width: 576px) {
+    .breed-card.expanded {
+        grid-column: span 2;
+        grid-row: span 2;
+        height: auto;
+        min-height: 450px;
+    }
+}
+
+/* --- ESTADO 2: TARJETAS NO SELECCIONADAS (DIMMED) --- */
+.breed-card.dimmed {
+    transform: scale(0.85);
+    opacity: 0.3;
+    filter: grayscale(80%);
+    pointer-events: none;
+}
+
+.breed-card.dimmed:hover {
+    opacity: 0.3;
+    transform: scale(0.85);
+    pointer-events: none;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes expandCard {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes expandImage {
+    from {
+        height: 100%;
+    }
+    to {
+        height: 50%;
+    }
+}
+
+@keyframes zoomImage {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes slideUpInfo {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

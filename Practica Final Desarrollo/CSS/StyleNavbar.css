@@ -152,6 +152,10 @@ body {
     padding: 0;
 }
 
+.navbar-expand-lg .navbar-toggler {
+    display: none;
+}
+
 /* Animación suave para la aparición */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-5px); }
@@ -162,4 +166,15 @@ body {
 .navbar:not(.navbar-expand-lg) .navbar-nav {
     align-items: center; /* Fuerza el centrado de los textos en la caja */
     width: 100%;
+}
+
+/* Media query para asegurar comportamiento correcto en móvil */
+@media (max-width: 991px) {
+    .navbar {
+        max-width: 70vw;
+    }
+    
+    .navbar-collapse:not(.show) {
+        display: none;
+    }
 }

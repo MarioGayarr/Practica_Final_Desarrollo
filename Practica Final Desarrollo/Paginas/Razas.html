@@ -5,45 +5,42 @@
     <title>Perros by Perrotruco</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-        <link rel="stylesheet" href="/Practica Final Desarrollo/CSS/StylesIndex.css" />
-        <link rel="stylesheet" href="/Practica Final Desarrollo/CSS/StyleNavbar.css" />
+    <link rel="stylesheet" href="/Practica Final Desarrollo/CSS/StylesIndex.css" />
+    <link rel="stylesheet" href="/Practica Final Desarrollo/CSS/StyleNavbar.css" />
+    <link rel="stylesheet" href="/Practica Final Desarrollo/CSS/StylesRazas.css" />
 </head>
 
-<body >
+<body>
     <header>
-        <nav class="navbar navbar-expand-lg justify-content-end">
-            <div class="container-fluid">
-              
-                <div class="navbar-collapse" id="navbarNavAltMarkup">
+        <nav id="mainNavbar" class="navbar navbar-expand-lg">
+            <div class="container-fluid p-0">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="toggler-icon"></span>
+                    <span class="toggler-icon"></span>
+                    <span class="toggler-icon"></span>
+                </button>
 
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-
                         <a class="navbar-brand" href="../Index.html">
-                            <img src="../Assets/Icons/Home.svg" alt="" width="30" height="24"
-                                class="d-inline-block align-text-top">
+                            <img src="../Assets/Icons/Home.svg" alt="" width="28" height="28">
                             Home
                         </a>
-                        <a class="navbar-brand" href="/Practica Final Desarrollo/Paginas/Whoami.html">
-                            <img src="../Assets/Icons/person.svg" alt="" width="30" height="30"
-                                class="d-inline-block align-text-top">
-                            ¿Quien soy?
-                        </a>
                         <a class="navbar-brand" href="/Practica Final Desarrollo/Paginas/Razas.html">
-                            <img src="../Assets/Icons/perrete.svg" alt="" width="30" height="27"
-                                class="d-inline-block align-text-top">
+                            <img src="../Assets/Icons/perrete.svg" alt="" width="28" height="28">
                             Razas
                         </a>
                         <a class="navbar-brand" href="/Practica Final Desarrollo/Paginas/Alimentacion.html">
-                            <img src="../Assets/Icons/alimentacion.svg" alt="" width="30" height="24"
-                                class="d-inline-block align-text-top">
+                            <img src="../Assets/Icons/alimentacion.svg" alt="" width="28" height="28">
                             Alimentación
                         </a>
                         <a class="navbar-brand" href="/Practica Final Desarrollo/Paginas/Contacto.html">
-                            <img src="../Assets/Icons/Contacto.svg" alt="" width="30" height="30"
-                                class="d-inline-block align-text-top">
+                            <img src="../Assets/Icons/Contacto.svg" alt="" width="28" height="28">
                             Contactanos
                         </a>
                     </div>
@@ -51,12 +48,811 @@
             </div>
         </nav>
     </header>
+
     <main>
+        <div class="intro-section text-center container mt-5 pt-5">
+            <h1 class="display-4 fw-bold text-white mb-3">Las razas de perros más comunes y recomendadas</h1>
+            <p class="lead text-light opacity-75">Pasa el ratón por encima para descubrir más.</p>
+        </div>
+
+        <div class="container-fluid px-4 py-5">
+            <div class="breeds-grid">
+
+                <article class="breed-card">
+                    <div class="img-wrapper">
+                        <img src="../Assets/Pictures/Razas/Alaskan.jpg" alt="Alaskan Malamute">
+                    </div>
+                    <div class="breed-info">
+                        <h3>Alaskan Malamute</h3>
+                        <p class="audience">Ideal para: Familias activas</p>
+                        <p class="desc">Fuerte, amable y devoto.</p>
+                        <div class="details-content">
+                            <hr>
+                            <p><strong>Esperanza de vida:</strong> 10-14 años</p>
+                            <p><strong>Nivel de energía:</strong> Alto</p>
+                            <p>Este gigante del norte fue criado para tirar trineos pesados en condiciones extremas. Son perros fuertes y resistentes que necesitan espacio y mucho ejercicio. No esperes un perro de sofá: el Alaskan Malamute es un atleta que quiere trabajar y explorar. Son afectuosos con su familia, pero su instinto de manada es fuerte y necesitan un líder firme.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="breed-card">
+                    <div class="img-wrapper">
+                        <img src="../Assets/Pictures/Razas/AmericanStaffordshireTerrier.jpg" alt="American Staffordshire Terrier">
+                    </div>
+                    <div class="breed-info">
+                        <h3>American Staffordshire Terrier</h3>
+                        <p class="audience">Ideal para: Dueños experimentados</p>
+                        <p class="desc">Fuerte, valiente y leal.</p>
+                        <div class="details-content">
+                            <hr>
+                            <p><strong>Esperanza de vida:</strong> 12-16 años</p>
+                            <p><strong>Nivel de energía:</strong> Muy alto</p>
+                            <p>No dejes que su aspecto musculoso te engañe: este perro es puro amor con su familia. El American Staffordshire es extremadamente leal y protector, pero necesita socialización temprana y un dueño que entienda su fuerza. Son perros atléticos que adoran el ejercicio intenso y los retos mentales. Con el entrenamiento adecuado, son compañeros increíbles.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="breed-card">
+                    <div class="img-wrapper">
+                        <img src="../Assets/Pictures/Razas/Basenji.jpg" alt="Basenji">
+                    </div>
+                    <div class="breed-info">
+                        <h3>Basenji</h3>
+                        <p class="audience">Ideal para: Cazadores y aventureros</p>
+                        <p class="desc">Independiente, alerta y elegante.</p>
+                        <div class="details-content">
+                            <hr>
+                            <p><strong>Esperanza de vida:</strong> 13-14 años</p>
+                            <p><strong>Nivel de energía:</strong> Alto</p>
+                            <p>El perro que no ladra. Originario de África, el Basenji es único en su especie: en lugar de ladrar, emite un sonido peculiar llamado "barru". Son perros independientes y curiosos, casi felinos en su comportamiento. No esperes obediencia ciega; este perro piensa por sí mismo y necesita un dueño que respete su inteligencia única.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="breed-card">
+                    <div class="img-wrapper">
+                        <img src="../Assets/Pictures/Razas/BassetHound.jpg" alt="Basset Hound">
+                    </div>
+                    <div class="breed-info">
+                        <h3>Basset Hound</h3>
+                        <p class="audience">Ideal para: Familias tranquilas</p>
+                        <p class="desc">Tranquilo, amistoso y obstinado.</p>
+                        <div class="details-content">
+                            <hr>
+                            <p><strong>Esperanza de vida:</strong> 8-12 años</p>
+                            <p><strong>Nivel de energía:</strong> Bajo-Medio</p>
+                            <p>Con esas orejas largas y esa mirada tierna, el Basset Hound parece un peluche viviente. Pero no te dejes engañar: este sabueso tiene un olfato extraordinario y una personalidad obstinada. Son perros tranquilos ideales para casas relajadas, pero cuando siguen un rastro, no hay quien los pare. Perfectos si buscas un compañero calmado con carácter.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="breed-card">
+                    <div class="img-wrapper">
+                        <img src="../Assets/Pictures/Razas/Beagle.jpg" alt="Beagle">
+                    </div>
+                    <div class="breed-info">
+                        <h3>Beagle</h3>
+                        <p class="audience">Ideal para: Familias y cazadores</p>
+                        <p class="desc">Curioso, alegre y glotón.</p>
+                        <div class="details-content">
+                            <hr>
+                            <p><strong>Esperanza de vida:</strong> 12-15 años</p>
+                            <p><strong>Nivel de energía:</strong> Alto</p>
+                            <p>El Beagle es ese amigo que siempre está de buen humor y con hambre. Su nariz es su brújula: cuando huele algo interesante, el mundo desaparece. Son sabuesos con un olfato increíble y una personalidad alegre que los hace perfectos para familias activas. Eso sí, prepárate para esconder bien la comida porque estos pequeños glotones son expertos en encontrarla.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="breed-card">
+                    <div class="img-wrapper">
+                        <img src="../Assets/Pictures/Razas/BedlingtonTerrier.jpg" alt="Bedlington Terrier">
+                    </div>
+                    <div class="breed-info">
+                        <h3>Bedlington Terrier</h3>
+                        <p class="audience">Ideal para: Familias activas</p>
+                        <p class="desc">Activo, tierno y confiado.</p>
+                        <div class="details-content">
+                            <hr>
+                            <p><strong>Esperanza de vida:</strong> 11-16 años</p>
+                            <p><strong>Nivel de energía:</strong> Alto</p>
+                            <p>Parece una oveja, pero late un corazón de atleta. El Bedlington Terrier es un perro único con pelaje rizado y apariencia aristocrática, pero bajo esa fachada elegante hay un deportista nato. Son activos, valientes y sorprendentemente rápidos. Perfectos para familias que quieren un perro distintivo que pueda seguir el ritmo de aventuras al aire libre.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="breed-card">
+                    <div class="img-wrapper">
+                        <img src="../Assets/Pictures/Razas/BichonHabanero.jpg" alt="Bichón Habanero">
+                    </div>
+                    <div class="breed-info">
+                        <h3>Bichón Habanero</h3>
+                        <p class="audience">Ideal para: Compañía urbana</p>
+                        <p class="desc">Alegre, afectuoso y travieso.</p>
+                        <div class="details-content">
+                            <hr>
+                            <p><strong>Esperanza de vida:</strong> 14-18 años</p>
+                            <p><strong>Nivel de energía:</strong> Medio</p>
+                            <p>El payaso de Cuba. Este pequeño perro peludo es pura alegría condensada en un cuerpo diminuto. El Bichón Habanero es sociable, juguetón y siempre está listo para hacer reír. Perfecto para apartamentos y familias urbanas que buscan un compañero cariñoso que se adapte a cualquier situación. Su pelaje sedoso requiere cuidados, pero su personalidad encantadora lo vale.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="breed-card">
+                    <div class="img-wrapper">
+                        <img src="../Assets/Pictures/Razas/BichonMaltes.jpg" alt="Bichón Maltés">
+                    </div>
+                    <div class="breed-info">
+                        <h3>Bichón Maltés</h3>
+                        <p class="audience">Ideal para: Compañía</p>
+                        <p class="desc">Gentil, cariñoso y juguetón.</p>
+                        <div class="details-content">
+                            <hr>
+                            <p><strong>Esperanza de vida:</strong> 12-15 años</p>
+                            <p><strong>Nivel de energía:</strong> Medio</p>
+                            <p>Una nube blanca con ojos brillantes. El Bichón Maltés es elegancia pura, con ese pelaje sedoso que parece seda. Son perros de compañía por excelencia: cariñosos, juguetones y devotos a su familia. No necesitan mucho espacio, pero sí mucho amor y cepillado regular. Ideales si buscas un compañero pequeño con gran corazón.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="breed-card">
+                    <div class="img-wrapper">
+                        <img src="../Assets/Pictures/Razas/BorderCollie.jpg" alt="Border Collie">
+                    </div>
+                    <div class="breed-info">
+                        <h3>Border Collie</h3>
+                        <p class="audience">Ideal para: Atletas mentales</p>
+                        <p class="desc">Altamente inteligente y trabajador.</p>
+                        <div class="details-content">
+                            <hr>
+                            <p><strong>Esperanza de vida:</strong> 12-15 años</p>
+                            <p><strong>Nivel de energía:</strong> Muy alto</p>
+                            <p>Este perro no se puede estar quieto porque su cerebro funciona a toda velocidad. Este perro es tan inteligente que necesita mucho trabajo mental y físico. Si no le das algo que pueda hacer convierte tu casa en su patio. Este perro es un compromiso, necesita ejercicio y actividad constante y el mismo te lo va a exijir si no se lo das.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="breed-card">
+                    <div class="img-wrapper">
+                        <img src="../Assets/Pictures/Razas/BostonTerrier.jpg" alt="Boston Terrier">
+                    </div>
+                    <div class="breed-info">
+                        <h3>Boston Terrier</h3>
+                        <p class="audience">Ideal para: Apartamentos</p>
+                        <p class="desc">Amistoso, entusiasta y brillante.</p>
+                        <div class="details-content">
+                            <hr>
+                            <p><strong>Esperanza de vida:</strong> 11-15 años</p>
+                            <p><strong>Nivel de energía:</strong> Medio</p>
+                            <p>El caballero de Boston. Con ese "esmoquin" natural y orejas puntiagudas, el Boston Terrier es el perro perfecto para la ciudad. Son compactos, sociables y sorprendentemente adaptables. Les encanta estar cerca de su gente y son excelentes con niños. No necesitan mucho espacio, pero sí mucha compañía. Un apartamento y tu cariño son todo lo que necesitan para ser felices.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="breed-card">
+                    <div class="img-wrapper">
+                        <img src="../Assets/Pictures/Razas/Boxer.jpg" alt="Boxer">
+                    </div>
+                    <div class="breed-info">
+                        <h3>Boxer</h3>
+                        <p class="audience">Ideal para: Familias activas</p>
+                        <p class="desc">Energético, leal y protector.</p>
+                        <div class="details-content">
+                            <hr>
+                            <p><strong>Esperanza de vida:</strong> 8-10 años</p>
+                            <p><strong>Nivel de energía:</strong> Muy alto</p>
+                            <p>Pura energía en forma de perro. El Boxer es un atleta incansable con cara de niño travieso permanente. Son leales, protectores y llenos de vida. Necesitan mucho ejercicio y estimulación o convertirán tu casa en su gimnasio personal. Excelentes con niños (aunque pueden ser algo bruscos por su entusiasmo), son guardianes natos que harían cualquier cosa por su familia.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="breed-card">
+                    <div class="img-wrapper">
+                        <img src="../Assets/Pictures/Razas/BoyeroBerna.jpg" alt="Boyero de Berna">
+                    </div>
+                    <div class="breed-info">
+                        <h3>Boyero de Berna</h3>
+                        <p class="audience">Ideal para: Familias grandes</p>
+                        <p class="desc">Fuerte, inteligente y afectuoso.</p>
+                        <div class="details-content">
+                            <hr>
+                            <p><strong>Esperanza de vida:</strong> 7-10 años</p>
+                            <p><strong>Nivel de energía:</strong> Medio-Alto</p>
+                            <p>El gigante gentil de los Alpes. El Boyero de Berna es un perro de trabajo suizo que combina fuerza bruta con un corazón de oro. Son extremadamente cariñosos con su familia, especialmente con niños. Aunque son grandes y poderosos, su temperamento es tranquilo y paciente. Necesitan espacio y ejercicio moderado, pero sobre todo necesitan estar cerca de su gente.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="breed-card">
+                    <div class="img-wrapper">
+                        <img src="../Assets/Pictures/Razas/Bulldog.jpg" alt="Bulldog Inglés">
+                    </div>
+                    <div class="breed-info">
+                        <h3>Bulldog Inglés</h3>
+                        <p class="audience">Ideal para: Familias tranquilas</p>
+                        <p class="desc">Tranquilo, determinado y cariñoso.</p>
+                        <div class="details-content">
+                            <hr>
+                            <p><strong>Esperanza de vida:</strong> 8-12 años</p>
+                            <p><strong>Nivel de energía:</strong> Bajo</p>
+                            <p>El icono británico por excelencia. El Bulldog Inglés es terquedad en forma de perro, pero con un corazón enorme. Son tranquilos, dignos y sorprendentemente testarudos. Prefieren el sofá al parque, pero su lealtad es inquebrantable. Perfectos para personas que buscan un compañero relajado que no exija maratones diarios. Su ronquido es música de fondo garantizada.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="breed-card">
+                    <div class="img-wrapper">
+                        <img src="../Assets/Pictures/Razas/BulldogFrances.jpg" alt="Bulldog Francés">
+                    </div>
+                    <div class="breed-info">
+                        <h3>Bulldog Francés</h3>
+                        <p class="audience">Ideal para: Pisos pequeños</p>
+                        <p class="desc">Tranquilo, cariñoso y gracioso.</p>
+                        <div class="details-content">
+                            <hr>
+                            <p><strong>Esperanza de vida:</strong> 10-14 años</p>
+                            <p><strong>Nivel de energía:</strong> Bajo-Medio</p>
+                            <p>El payaso de las razas. El Bulldog Francés es puro carisma en un cuerpo compacto. Con esas orejas de murciélago y cara expresiva, es imposible no reír con sus travesuras. Son perros de apartamento perfectos: no necesitan mucho ejercicio, pero sí toda tu atención. Roncan, resopian y hacen ruidos raros, pero eso forma parte de su encanto único.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="breed-card">
+                    <div class="img-wrapper">
+                        <img src="../Assets/Pictures/Razas/Bullmastiff.jpg" alt="Bullmastiff">
+                    </div>
+                    <div class="breed-info">
+                        <h3>Bullmastiff</h3>
+                        <p class="audience">Ideal para: Protección</p>
+                        <p class="desc">Poderoso, valiente y leal.</p>
+                        <div class="details-content">
+                            <hr>
+                            <p><strong>Esperanza de vida:</strong> 8-12 años</p>
+                            <p><strong>Nivel de energía:</strong> Medio</p>
+                            <p>El guardián silencioso. El Bullmastiff fue criado para proteger propiedades sin hacer ruido. Son perros masivos y poderosos, pero sorprendentemente gentiles con su familia. No ladran mucho, pero su simple presencia intimida. Necesitan un dueño que entienda su tamaño y fuerza. Son leales hasta la médula y harían cualquier cosa por proteger a los suyos.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="breed-card">
+                    <div class="img-wrapper">
+                        <img src="../Assets/Pictures/Razas/BullTerrier.jpg" alt="Bull Terrier">
+                    </div>
+                    <div class="breed-info">
+                        <h3>Bull Terrier</h3>
+                        <p class="audience">Ideal para: Dueños experimentados</p>
+                        <p class="desc">Fuerte, tenaz y cariñoso.</p>
+                        <div class="details-content">
+                            <hr>
+                            <p><strong>Esperanza de vida:</strong> 12-13 años</p>
+                            <p><strong>Nivel de energía:</strong> Muy alto</p>
+                            <p>Con esa cabeza ovalada característica, el Bull Terrier es inconfundible. Son perros atléticos, musculosos y llenos de energía. Necesitan un dueño experimentado que pueda canalizar su fuerza y terquedad. Son cariñosos y leales, pero también obstinados. Si no estableces reglas claras desde el principio, ellos las establecerán por ti. Requieren mucho ejercicio y estimulación mental.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="breed-card">
+                    <div class="img-wrapper">
+                        <img src="../Assets/Pictures/Razas/CairnTerrier.jpg" alt="Cairn Terrier">
+                    </div>
+                    <div class="breed-info">
+                        <h3>Cairn Terrier</h3>
+                        <p class="audience">Ideal para: Aventureros</p>
+                        <p class="desc">Audaz, independiente y divertido.</p>
+                        <div class="details-content">
+                            <hr>
+                            <p><strong>Esperanza de vida:</strong> 13-15 años</p>
+                            <p><strong>Nivel de energía:</strong> Alto</p>
+                            <p>El pequeño terrier escocés con corazón de león. El Cairn Terrier es audaz, independiente y siempre listo para la aventura. No dejes que su tamaño te engañe: este perro tiene más coraje que muchos grandes. Son excavadores natos (fue criado para cazar en madrigueras), así que prepárate para encontrar agujeros en el jardín. Ideales para senderismo y actividades al aire libre.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="breed-card">
+                    <div class="img-wrapper">
+                        <img src="../Assets/Pictures/Razas/CavalierKingCharlesSpaniel.jpg" alt="Cavalier King Charles Spaniel">
+                    </div>
+                    <div class="breed-info">
+                        <h3>Cavalier King Charles Spaniel</h3>
+                        <p class="audience">Ideal para: Compañía amorosa</p>
+                        <p class="desc">Suave, gentil y cariñoso.</p>
+                        <div class="details-content">
+                            <hr>
+                            <p><strong>Esperanza de vida:</strong> 9-14 años</p>
+                            <p><strong>Nivel de energía:</strong> Medio</p>
+                            <p>El spaniel aristocrático. El Cavalier King Charles es elegancia y dulzura combinadas. Fueron criados para ser compañeros de la realeza y siguen siendo expertos en el arte de la compañía. Son perros que necesitan estar cerca de su gente; la soledad no es para ellos. Con esos ojos grandes y expresivos, te convencerán de cualquier cosa. Perfectos para quienes buscan un amigo fiel y cariñoso.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="breed-card">
+                    <div class="img-wrapper">
+                        <img src="../Assets/Pictures/Razas/Chihuahua.jpg" alt="Chihuahua">
+                    </div>
+                    <div class="breed-info">
+                        <h3>Chihuahua</h3>
+                        <p class="audience">Ideal para: Compañía constante</p>
+                        <p class="desc">Gran personalidad en cuerpo pequeño.</p>
+                        <div class="details-content">
+                            <hr>
+                            <p><strong>Esperanza de vida:</strong> 14-18 años</p>
+                            <p><strong>Nivel de energía:</strong> Medio</p>
+                            <p>Napoleón en forma de perro. El Chihuahua tiene la personalidad más grande en el cuerpo más pequeño. Son valientes hasta la temeridad, a menudo olvidando su diminuto tamaño. Extremadamente leales a su dueño (a veces demasiado), pueden ser territoriales. Son perfectos para apartamentos y para personas que quieren un compañero portátil que cree que es un guardián de 50 kilos.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="breed-card">
+                    <div class="img-wrapper">
+                        <img src="../Assets/Pictures/Razas/ChowChow.jpg" alt="Chow Chow">
+                    </div>
+                    <div class="breed-info">
+                        <h3>Chow Chow</h3>
+                        <p class="audience">Ideal para: Dueños tranquilos</p>
+                        <p class="desc">Independiente, digno y leal.</p>
+                        <div class="details-content">
+                            <hr>
+                            <p><strong>Esperanza de vida:</strong> 9-15 años</p>
+                            <p><strong>Nivel de energía:</strong> Bajo-Medio</p>
+                            <p>El oso de peluche viviente de China. El Chow Chow es único: independiente, digno y con esa lengua azul característica. No son perros que busquen constantemente tu atención; son más bien como gatos con pelaje de león. Necesitan un dueño que respete su espacio y personalidad. Son leales a su familia, pero reservados con extraños. Su pelaje requiere mucho mantenimiento.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="breed-card">
+                    <div class="img-wrapper">
+                        <img src="../Assets/Pictures/Razas/Cocker.jpg" alt="Cocker Spaniel">
+                    </div>
+                    <div class="breed-info">
+                        <h3>Cocker Spaniel</h3>
+                        <p class="audience">Ideal para: Familias activas</p>
+                        <p class="desc">Alegre, cariñoso y obediente.</p>
+                        <div class="details-content">
+                            <hr>
+                            <p><strong>Esperanza de vida:</strong> 12-15 años</p>
+                            <p><strong>Nivel de energía:</strong> Alto</p>
+                            <p>El spaniel con el corazón más alegre. El Cocker Spaniel es pura felicidad con orejas largas. Son perros deportivos que adoran correr, nadar y recuperar. Su cola está siempre en movimiento y su entusiasmo es contagioso. Excelentes con familias activas, necesitan ejercicio diario y mucho amor. Su pelaje sedoso requiere cuidados regulares, pero su personalidad cariñosa lo compensa con creces.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="breed-card">
+                    <div class="img-wrapper">
+                        <img src="../Assets/Pictures/Razas/Corgi.jpg" alt="Corgi">
+                    </div>
+                    <div class="breed-info">
+                        <h3>Corgi</h3>
+                        <p class="audience">Ideal para: Familias</p>
+                        <p class="desc">Inteligente, cariñoso y audaz.</p>
+                        <div class="details-content">
+                            <hr>
+                            <p><strong>Esperanza de vida:</strong> 12-13 años</p>
+                            <p><strong>Nivel de energía:</strong> Medio-Alto</p>
+                            <p>El favorito de la realeza británica. El Corgi es un perro pastor en cuerpo compacto. Con esas patas cortas y ese trasero adorable, es imposible no sonreír al verlos. Pero no te dejes engañar: son perros trabajadores, inteligentes y con mucha energía. Les encanta pastorear (incluso a los niños), son valientes y tienen una personalidad enorme. Perfectos para familias activas.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="breed-card">
+                    <div class="img-wrapper">
+                        <img src="../Assets/Pictures/Razas/Dachshund.jpg" alt="Dachshund">
+                    </div>
+                    <div class="breed-info">
+                        <h3>Dachshund</h3>
+                        <p class="audience">Ideal para: Apartamentos</p>
+                        <p class="desc">Audaz, inteligente y cariñoso.</p>
+                        <div class="details-content">
+                            <hr>
+                            <p><strong>Esperanza de vida:</strong> 12-16 años</p>
+                            <p><strong>Nivel de energía:</strong> Medio</p>
+                            <p>La salchicha con patas. El Dachshund fue criado para cazar tejones en madrigueras, de ahí su cuerpo alargado y patas cortas. Son perros valientes, a veces testarudos, y con una personalidad mucho más grande que su tamaño. Perfectos para apartamentos, pero cuidado con las escaleras: su espalda es delicada. Son cariñosos, leales y tienen un ladrido sorprendentemente potente.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="breed-card">
+                    <div class="img-wrapper">
+                        <img src="../Assets/Pictures/Razas/Doberman.jpg" alt="Doberman">
+                    </div>
+                    <div class="breed-info">
+                        <h3>Doberman</h3>
+                        <p class="audience">Ideal para: Protección</p>
+                        <p class="desc">Elegante, leal y vigilante.</p>
+                        <div class="details-content">
+                            <hr>
+                            <p><strong>Esperanza de vida:</strong> 10-13 años</p>
+                            <p><strong>Nivel de energía:</strong> Muy alto</p>
+                            <p>Elegancia letal. El Doberman es la combinación perfecta de inteligencia, atletismo y lealtad. Son perros de guardia por excelencia, pero con su familia son sorprendentemente cariñosos. Necesitan mucho ejercicio físico y mental; un Doberman aburrido es un Doberman destructivo. Requieren un dueño firme y consistente, pero te recompensarán con devoción absoluta.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="breed-card">
+                    <div class="img-wrapper">
+                        <img src="../Assets/Pictures/Razas/EsquimalAmericano.jpg" alt="Esquimal Americano">
+                    </div>
+                    <div class="breed-info">
+                        <h3>Esquimal Americano</h3>
+                        <p class="audience">Ideal para: Familias activas</p>
+                        <p class="desc">Inteligente, amistoso y activo.</p>
+                        <div class="details-content">
+                            <hr>
+                            <p><strong>Esperanza de vida:</strong> 12-15 años</p>
+                            <p><strong>Nivel de energía:</strong> Alto</p>
+                            <p>Una bola de nieve con energía infinita. El Esquimal Americano es un perro nórdico compacto con un pelaje blanco espectacular. Son inteligentes, ágiles y siempre alerta. Les encanta aprender trucos y participar en actividades con su familia. Su pelaje requiere cepillado regular, pero su personalidad juguetona y leal hace que cada minuto de cuidado valga la pena.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="breed-card">
+                    <div class="img-wrapper">
+                        <img src="../Assets/Pictures/Razas/GoldenRetriever.jpg" alt="Golden Retriever">
+                    </div>
+                    <div class="breed-info">
+                        <h3>Golden Retriever</h3>
+                        <p class="audience">Ideal para: Familias con niños</p>
+                        <p class="desc">Amable, inteligente y devoto.</p>
+                        <div class="details-content">
+                            <hr>
+                            <p><strong>Esperanza de vida:</strong> 10-12 años</p>
+                            <p><strong>Nivel de energía:</strong> Alto</p>
+                            <p>El perro dorado que nunca creció. El Golden Retriever mantiene su espíritu de cachorro durante toda su vida. Son la definición de "mejor amigo del hombre": leales, pacientes, inteligentes y siempre felices. Excelentes con niños, perfectos como perros de terapia, y listos para cualquier aventura. Necesitan ejercicio diario y, sobre todo, estar cerca de su familia. Su sonrisa es permanente.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="breed-card">
+                    <div class="img-wrapper">
+                        <img src="../Assets/Pictures/Razas/GranDanes.jpg" alt="Gran Danés">
+                    </div>
+                    <div class="breed-info">
+                        <h3>Gran Danés</h3>
+                        <p class="audience">Ideal para: Familias tranquilas</p>
+                        <p class="desc">Gentil, amistoso y noble.</p>
+                        <div class="details-content">
+                            <hr>
+                            <p><strong>Esperanza de vida:</strong> 7-10 años</p>
+                            <p><strong>Nivel de energía:</strong> Bajo-Medio</p>
+                            <p>El gigante amable. El Gran Danés es uno de los perros más grandes del mundo, pero su corazón es aún más grande. Son tranquilos, dignos y sorprendentemente adaptables a la vida en interiores (aunque necesitan espacio). A pesar de su tamaño, son gentiles y cariñosos. Piensan que son perros falderos y querrán subirse a tu regazo. Su vida es corta, pero cada momento es precioso.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="breed-card">
+                    <div class="img-wrapper">
+                        <img src="../Assets/Pictures/Razas/Husky.jpg" alt="Husky Siberiano">
+                    </div>
+                    <div class="breed-info">
+                        <h3>Husky Siberiano</h3>
+                        <p class="audience">Ideal para: Personas muy activas</p>
+                        <p class="desc">Energético, vocal y amigable.</p>
+                        <div class="details-content">
+                            <hr>
+                            <p><strong>Esperanza de vida:</strong> 12-15 años</p>
+                            <p><strong>Nivel de energía:</strong> Extremadamente alto</p>
+                            <p>El lobo que vive en tu casa. El Husky Siberiano es hermoso, pero no es para cualquiera. Son perros de trabajo que necesitan correr kilómetros diarios. Son vocales (aullan más que ladran), escapistas natos y con una energía aparentemente infinita. Si no les das suficiente ejercicio, rediseñarán tu jardín y tu casa. Pero si puedes seguir su ritmo, son compañeros leales y divertidos.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="breed-card">
+                    <div class="img-wrapper">
+                        <img src="../Assets/Pictures/Razas/LabradorRetriever.jpg" alt="Labrador Retriever">
+                    </div>
+                    <div class="breed-info">
+                        <h3>Labrador Retriever</h3>
+                        <p class="audience">Ideal para: Familias</p>
+                        <p class="desc">Afectuoso, inteligente y leal.</p>
+                        <div class="details-content">
+                            <hr>
+                            <p><strong>Esperanza de vida:</strong> 10-12 años</p>
+                            <p><strong>Nivel de energía:</strong> Alto</p>
+                            <p>El perro más popular del mundo por una razón. El Labrador Retriever es alegría pura con cuatro patas. Son amigables con todos, incluyendo extraños, otros perros y gatos. Les encanta nadar, recuperar objetos y, sobre todo, comer (controla sus raciones). Excelentes perros de servicio, de terapia y compañeros familiares. Su entusiasmo por la vida es contagioso.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="breed-card">
+                    <div class="img-wrapper">
+                        <img src="../Assets/Pictures/Razas/LebrelAfgano.jpg" alt="Lebrel Afgano">
+                    </div>
+                    <div class="breed-info">
+                        <h3>Lebrel Afgano</h3>
+                        <p class="audience">Ideal para: Cazadores</p>
+                        <p class="desc">Elegante, independiente y distante.</p>
+                        <div class="details-content">
+                            <hr>
+                            <p><strong>Esperanza de vida:</strong> 12-14 años</p>
+                            <p><strong>Nivel de energía:</strong> Alto</p>
+                            <p>La supermodelo del mundo canino. El Lebrel Afgano es elegancia y velocidad en estado puro. Con ese pelaje largo y sedoso, parecen salidos de una pasarela. Pero bajo esa belleza hay un cazador ágil y rápido. Son independientes, a veces distantes, y requieren mucho cuidado de pelaje. No son para principiantes, pero si buscas un perro único y majestuoso, este es tu candidato.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="breed-card">
+                    <div class="img-wrapper">
+                        <img src="../Assets/Pictures/Razas/MastinItaliano.jpg" alt="Mastín Italiano">
+                    </div>
+                    <div class="breed-info">
+                        <h3>Mastín Italiano</h3>
+                        <p class="audience">Ideal para: Protección</p>
+                        <p class="desc">Poderoso, leal y vigilante.</p>
+                        <div class="details-content">
+                            <hr>
+                            <p><strong>Esperanza de vida:</strong> 8-10 años</p>
+                            <p><strong>Nivel de energía:</strong> Medio</p>
+                            <p>El guardián italiano por excelencia. El Mastín Italiano (Cane Corso) es puro músculo y determinación. Son perros poderosos que necesitan un dueño experimentado y firme. Con su familia son leales y protectores, pero pueden ser desconfiados con extraños. Necesitan socialización temprana y entrenamiento consistente. Si buscas un guardián serio y devoto, este es tu perro.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="breed-card">
+                    <div class="img-wrapper">
+                        <img src="../Assets/Pictures/Razas/PastorAleman.jpg" alt="Pastor Alemán">
+                    </div>
+                    <div class="breed-info">
+                        <h3>Pastor Alemán</h3>
+                        <p class="audience">Ideal para: Seguridad y deporte</p>
+                        <p class="desc">Valiente, leal y muy inteligente.</p>
+                        <div class="details-content">
+                            <hr>
+                            <p><strong>Esperanza de vida:</strong> 9-13 años</p>
+                            <p><strong>Nivel de energía:</strong> Muy alto</p>
+                            <p>El perro policía por excelencia. El Pastor Alemán es inteligencia, lealtad y versatilidad combinadas. Son perros de trabajo que necesitan un propósito en la vida. Excelentes como guardianes, perros de servicio, búsqueda y rescate, o simplemente como compañeros leales. Necesitan mucho ejercicio físico y mental. Con el entrenamiento adecuado, no hay límite para lo que pueden aprender.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="breed-card">
+                    <div class="img-wrapper">
+                        <img src="../Assets/Pictures/Razas/PastorBelga.jpg" alt="Pastor Belga">
+                    </div>
+                    <div class="breed-info">
+                        <h3>Pastor Belga</h3>
+                        <p class="audience">Ideal para: Trabajo y deporte</p>
+                        <p class="desc">Elegante, inteligente y vigilante.</p>
+                        <div class="details-content">
+                            <hr>
+                            <p><strong>Esperanza de vida:</strong> 12-14 años</p>
+                            <p><strong>Nivel de energía:</strong> Muy alto</p>
+                            <p>La elegancia belga en cuatro patas. El Pastor Belga (Malinois) es un perro de trabajo de élite. Son más rápidos y ágiles que el Pastor Alemán, con una energía casi inagotable. Utilizados por fuerzas especiales y policía de élite, necesitan un dueño experimentado que pueda canalizar su intensidad. No son perros de compañía tranquilos; son atletas que necesitan trabajo constante.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="breed-card">
+                    <div class="img-wrapper">
+                        <img src="../Assets/Pictures/Razas/PastordeAnatolia.jpg" alt="Pastor de Anatolia">
+                    </div>
+                    <div class="breed-info">
+                        <h3>Pastor de Anatolia</h3>
+                        <p class="audience">Ideal para: Protección</p>
+                        <p class="desc">Poderoso, independiente y protector.</p>
+                        <div class="details-content">
+                            <hr>
+                            <p><strong>Esperanza de vida:</strong> 11-13 años</p>
+                            <p><strong>Nivel de energía:</strong> Medio-Alto</p>
+                            <p>El guardián de rebaños turco. El Pastor de Anatolia es un perro guardián masivo criado para proteger ganado de depredadores. Son independientes, territoriales y extremadamente protectores. No son perros de ciudad ni para principiantes. Necesitan espacio, un propósito claro y un dueño que entienda su naturaleza. Con su familia son leales, pero siempre mantendrán su instinto guardián.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="breed-card">
+                    <div class="img-wrapper">
+                        <img src="../Assets/Pictures/Razas/PastorDeLasIslasShetland.jpg" alt="Pastor de las Islas Shetland">
+                    </div>
+                    <div class="breed-info">
+                        <h3>Pastor de las Islas Shetland</h3>
+                        <p class="audience">Ideal para: Familias</p>
+                        <p class="desc">Inteligente, obediente y affectuoso.</p>
+                        <div class="details-content">
+                            <hr>
+                            <p><strong>Esperanza de vida:</strong> 12-13 años</p>
+                            <p><strong>Nivel de energía:</strong> Medio-Alto</p>
+                            <p>El mini Border Collie escocés. El Pastor de las Islas Shetland (Sheltie) es un perro pastor en miniatura con un cerebro de tamaño completo. Son inteligentes, obedientes y excelentes en deportes caninos. Adoran aprender trucos y complacer a su familia. Son más reservados que el Collie, pero igualmente cariñosos. Perfectos para familias que quieren un perro inteligente en formato compacto.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="breed-card">
+                    <div class="img-wrapper">
+                        <img src="../Assets/Pictures/Razas/PitBullTerrierAmericano.jpg" alt="Pit Bull Terrier Americano">
+                    </div>
+                    <div class="breed-info">
+                        <h3>Pit Bull Terrier Americano</h3>
+                        <p class="audience">Ideal para: Dueños experimentados</p>
+                        <p class="desc">Fuerte, tenaz y cariñoso.</p>
+                        <div class="details-content">
+                            <hr>
+                            <p><strong>Esperanza de vida:</strong> 8-15 años</p>
+                            <p><strong>Nivel de energía:</strong> Muy alto</p>
+                            <p>El incomprendido. El Pit Bull Terrier Americano es uno de los perros más malinterpretados. Son increíblemente leales, cariñosos con su familia y atléticos. Necesitan socialización temprana, entrenamiento consistente y un dueño responsable. Con el cuidado adecuado, son compañeros amorosos y devotos. Su fuerza física requiere respeto, pero su corazón es puro amor.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="breed-card">
+                    <div class="img-wrapper">
+                        <img src="../Assets/Pictures/Razas/Pomerania.jpg" alt="Pomerania">
+                    </div>
+                    <div class="breed-info">
+                        <h3>Pomerania</h3>
+                        <p class="audience">Ideal para: Compañía</p>
+                        <p class="desc">Pequeño, activo y inteligente.</p>
+                        <div class="details-content">
+                            <hr>
+                            <p><strong>Esperanza de vida:</strong> 12-16 años</p>
+                            <p><strong>Nivel de energía:</strong> Alto</p>
+                            <p>La bola de pelos con actitud. El Pomerania es un spitz miniatura con el ego de un perro gigante. Son perros valientes, vivaces y llenos de personalidad. Les encanta ser el centro de atención y son sorprendentemente buenos perros guardianes (su ladrido es mucho más grande que su cuerpo). Perfectos para apartamentos, pero prepárate para cepillados frecuentes y mucha energía en formato pequeño.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="breed-card">
+                    <div class="img-wrapper">
+                        <img src="../Assets/Pictures/Razas/Poodle.jpg" alt="Poodle">
+                    </div>
+                    <div class="breed-info">
+                        <h3>Poodle</h3>
+                        <p class="audience">Ideal para: Familias</p>
+                        <p class="desc">Inteligente, elegante y leal.</p>
+                        <div class="details-content">
+                            <hr>
+                            <p><strong>Esperanza de vida:</strong> 12-15 años</p>
+                            <p><strong>Nivel de energía:</strong> Medio-Alto</p>
+                            <p>Elegancia francesa en tres tamaños. El Poodle (o Caniche) es mucho más que un corte de pelo elegante. Son increíblemente inteligentes, versátiles y atléticos. Fueron criados como perros de caza acuática, pero sobresalen en casi todo: agilidad, obediencia, terapia. Su pelaje rizado no suelta pelo, pero requiere aseo profesional regular. Perfectos para familias activas con alergias.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="breed-card">
+                    <div class="img-wrapper">
+                        <img src="../Assets/Pictures/Razas/Pug.jpg" alt="Pug">
+                    </div>
+                    <div class="breed-info">
+                        <h3>Pug</h3>
+                        <p class="audience">Ideal para: Compañía urbana</p>
+                        <p class="desc">Cariñoso, alegre y gracioso.</p>
+                        <div class="details-content">
+                            <hr>
+                            <p><strong>Esperanza de vida:</strong> 12-15 años</p>
+                            <p><strong>Nivel de energía:</strong> Bajo</p>
+                            <p>El payaso arrugado. El Pug es un perro de compañía chino con una cara que expresa mil emociones. Son cariñosos, divertidos y completamente adictos a la compañía humana. No son atléticos ni necesitan mucho ejercicio, pero sí necesitan estar siempre cerca de ti. Roncan, resopilan y hacen ruidos extraños, pero eso es parte de su encanto. Perfectos para quienes buscan un compañero tranquilo y cariñoso.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="breed-card">
+                    <div class="img-wrapper">
+                        <img src="../Assets/Pictures/Razas/Rottweiler.jpg" alt="Rottweiler">
+                    </div>
+                    <div class="breed-info">
+                        <h3>Rottweiler</h3>
+                        <p class="audience">Ideal para: Protección</p>
+                        <p class="desc">Leal, confiado y cariñoso.</p>
+                        <div class="details-content">
+                            <hr>
+                            <p><strong>Esperanza de vida:</strong> 8-11 años</p>
+                            <p><strong>Nivel de energía:</strong> Medio-Alto</p>
+                            <p>El guardián alemán con corazón de oro. El Rottweiler tiene mala reputación, pero con su familia es extremadamente leal y cariñoso. Son perros confiados, inteligentes y protectores. Necesitan socialización temprana y un dueño firme pero justo. No son agresivos por naturaleza, pero su instinto protector es fuerte. Con el entrenamiento adecuado, son compañeros devotos y guardianes excepcionales.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="breed-card">
+                    <div class="img-wrapper">
+                        <img src="../Assets/Pictures/Razas/SanBernardo.jpg" alt="San Bernardo">
+                    </div>
+                    <div class="breed-info">
+                        <h3>San Bernardo</h3>
+                        <p class="audience">Ideal para: Familias tranquilas</p>
+                        <p class="desc">Tranquilo, cariñoso y protector.</p>
+                        <div class="details-content">
+                            <hr>
+                            <p><strong>Esperanza de vida:</strong> 8-10 años</p>
+                            <p><strong>Nivel de energía:</strong> Bajo</p>
+                            <p>El héroe de los Alpes. El San Bernardo es famoso por rescatar personas en la nieve, y su carácter gentil refleja esa nobleza. Son perros masivos pero increíblemente pacientes y cariñosos, especialmente con niños. No necesitan mucho ejercicio, pero sí mucho espacio. Prepárate para mucha baba, mucho pelo y mucho amor. Son gigantes gentiles que solo quieren estar cerca de su familia.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="breed-card">
+                    <div class="img-wrapper">
+                        <img src="../Assets/Pictures/Razas/ShihTzu.jpg" alt="Shih Tzu">
+                    </div>
+                    <div class="breed-info">
+                        <h3>Shih Tzu</h3>
+                        <p class="audience">Ideal para: Compañía</p>
+                        <p class="desc">Cariñoso, orgulloso y vivaz.</p>
+                        <div class="details-content">
+                            <hr>
+                            <p><strong>Esperanza de vida:</strong> 10-18 años</p>
+                            <p><strong>Nivel de energía:</strong> Bajo-Medio</p>
+                            <p>El pequeño león tibetano. El Shih Tzu fue criado para ser compañero de la realeza china, y todavía mantiene esa actitud aristocrática. Son cariñosos, vivaces y sorprendentemente orgullosos. Su pelaje largo y sedoso requiere mucho cuidado, pero su personalidad encantadora lo vale. No necesitan mucho ejercicio, solo tu compañía constante. Perfectos para quienes buscan un compañero elegante y cariñoso.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="breed-card">
+                    <div class="img-wrapper">
+                        <img src="../Assets/Pictures/Razas/SpanielBreton.jpg" alt="Spaniel Bretón">
+                    </div>
+                    <div class="breed-info">
+                        <h3>Spaniel Bretón</h3>
+                        <p class="audience">Ideal para: Cazadores</p>
+                        <p class="desc">Activo, ágil y entusiasta.</p>
+                        <div class="details-content">
+                            <hr>
+                            <p><strong>Esperanza de vida:</strong> 12-15 años</p>
+                            <p><strong>Nivel de energía:</strong> Muy alto</p>
+                            <p>El todoterreno francés. El Spaniel Bretón es un perro de caza versátil y atlético. Son ágiles, entusiastas y siempre listos para trabajar. Excelentes en campo abierto, necesitan mucho ejercicio y estimulación mental. Son perros para cazadores activos o familias deportistas que puedan darles el trabajo que necesitan. Su energía es contagiosa y su lealtad es inquebrantable.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="breed-card">
+                    <div class="img-wrapper">
+                        <img src="../Assets/Pictures/Razas/Terranova.jpg" alt="Terranova">
+                    </div>
+                    <div class="breed-info">
+                        <h3>Terranova</h3>
+                        <p class="audience">Ideal para: Familias</p>
+                        <p class="desc">Gentil, leal y excelente nadador.</p>
+                        <div class="details-content">
+                            <hr>
+                            <p><strong>Esperanza de vida:</strong> 9-10 años</p>
+                            <p><strong>Nivel de energía:</strong> Medio</p>
+                            <p>El oso acuático canadiense. El Terranova es un gigante gentil con instinto de rescate acuático. Son nadadores excepcionales con patas palmeadas y pelaje impermeable. A pesar de su tamaño masivo, son tranquilos, pacientes y excepcionalmente buenos con niños. Les encanta el agua y salvar a cualquiera que parezca estar en "peligro". Son protectores naturales con corazón de héroe.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="breed-card">
+                    <div class="img-wrapper">
+                        <img src="../Assets/Pictures/Razas/TerrierRusoNegro.jpg" alt="Terrier Ruso Negro">
+                    </div>
+                    <div class="breed-info">
+                        <h3>Terrier Ruso Negro</h3>
+                        <p class="audience">Ideal para: Protección</p>
+                        <p class="desc">Fuerte, valiente y protector.</p>
+                        <div class="details-content">
+                            <hr>
+                            <p><strong>Esperanza de vida:</strong> 10-14 años</p>
+                            <p><strong>Nivel de energía:</strong> Muy alto</p>
+                            <p>El guardián soviético. El Terrier Ruso Negro fue criado por el ejército soviético como perro de trabajo multifuncional. Son grandes, poderosos e intimidantes, pero con su familia son leales y protectores. Necesitan un dueño experimentado que pueda manejar su tamaño, fuerza y personalidad dominante. No son perros para principiantes, pero para el dueño adecuado son guardianes excepcionales.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="breed-card">
+                    <div class="img-wrapper">
+                        <img src="../Assets/Pictures/Razas/Yorkshire.jpg" alt="Yorkshire Terrier">
+                    </div>
+                    <div class="breed-info">
+                        <h3>Yorkshire Terrier</h3>
+                        <p class="audience">Ideal para: Compañía</p>
+                        <p class="desc">Pequeño, valiente y cariñoso.</p>
+                        <div class="details-content">
+                            <hr>
+                            <p><strong>Esperanza de vida:</strong> 13-16 años</p>
+                            <p><strong>Nivel de energía:</strong> Medio</p>
+                            <p>La joya de Yorkshire. El Yorkshire Terrier es elegancia británica en formato miniatura. Con ese pelaje sedoso que parece cabello humano, son pequeños pero con el corazón de un terrier de verdad: valientes, curiosos y con personalidad. Son excelentes perros de compañía para apartamentos, pero no subestimes su espíritu: siguen siendo terriers y tienen carácter. Requieren cepillado diario, pero su devoción lo vale.</p>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
 
     </main>
+    
+   
     <footer>
         <!-- place footer here -->
     </footer>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha384-1H217gwSVyLSIfaLxHbE7dRb3v4mYCKbpQvzx0cegeju1MVsGrX5xXxAvs/HgeFs"
+        crossorigin="anonymous"></script>
+    
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
@@ -64,6 +860,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"></script>
+    <script src="../JS/Galeria.js"></script>
+    <script src="../JS/Navbar.js"></script>
+
+   
 </body>
 
 </html>
