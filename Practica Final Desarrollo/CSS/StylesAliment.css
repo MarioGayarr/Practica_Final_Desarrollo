@@ -66,16 +66,23 @@ body {
 
 /* Contenedor de imágenes */
 .image-container {
-  overflow: hidden;
+  overflow: visible;
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: 500px;
 }
 
 .image-container img {
-  width: 100%;
+  width: 90%;
   height: auto;
   display: block;
   transition: transform 0.3s ease;
+  object-fit: contain;
+  max-width: 90%;
+  max-height: 450px;
 }
 
 .image-container img:hover {

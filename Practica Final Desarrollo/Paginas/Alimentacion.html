@@ -11,9 +11,25 @@
     <link rel="stylesheet" href="../CSS/StylesAliment.css" />
     <link rel="stylesheet" href="../CSS/StyleNavbar.css" />
     <link rel="stylesheet" href="../CSS/StyleCarouselAlimentacion.css">
+    <link rel="stylesheet" href="../CSS/StylesCookies.css">
 </head>
 
 <body>
+    <div id="cookie-overlay" class="cookie-overlay"></div>
+
+    <div id="barraaceptacion">
+        <div class="cookie-container">
+            <div class="cookie-content">
+                <h3>Política de Cookies</h3>
+                <p>Utilizamos cookies para mejorar tu experiencia en nuestro sitio. Al continuar navegando, aceptas el
+                    uso de cookies. Para más información, consulta nuestra <a href="#">política de privacidad</a>.</p>
+            </div>
+            <div class="cookie-buttons">
+                <button id="aceptar-cookies" class="btn">Aceptar</button>
+            </div>
+        </div>
+    </div>
+
     <header>
         <nav id="mainNavbar" class="navbar navbar-expand-lg">
             <div class="container-fluid p-0">
@@ -50,7 +66,7 @@
             <section class="intro-text-column">
                 <h1 class="main-title">Nutrición de Precisión</h1>
                 <p class="main-description">
-                    Aplicación de la Ley de Kleiber ($W^{0.75}$): El tamaño determina no solo la cantidad, sino la
+                    Aplicación de la Ley de Kleiber: El tamaño determina no solo la cantidad, sino la
                     composición química de la dieta. Analizamos los requerimientos metabólicos desde el Chihuahua hasta
                     el Mastín.
                 </p>
@@ -60,8 +76,7 @@
                 <div class="slider">
                     <div class="track" id="track">
                         <article class="project-card" active>
-                            <img class="project-card__bg"
-                                src="/Practica Final Desarrollo/Assets/Pictures/perro_lite.jpg" alt="Perro pequeño">
+                            <img class="project-card__bg" src="../Assets/Pictures/perro_lite.jpg" alt="Perro pequeño">
                             <div class="project-card__content">
                                 <div>
                                     <h3 class="project-card__title">Pequeños</h3><a href="#small-section"
@@ -70,8 +85,8 @@
                             </div>
                         </article>
                         <article class="project-card">
-                            <img class="project-card__bg"
-                                src="/Practica Final Desarrollo/Assets/Pictures/perro_mediano.jpg" alt="Perro mediano">
+                            <img class="project-card__bg" src="../Assets/Pictures/perro_mediano.jpg"
+                                alt="Perro mediano">
                             <div class="project-card__content">
                                 <div>
                                     <h3 class="project-card__title">Medianos</h3><a href="#medium-section"
@@ -80,8 +95,7 @@
                             </div>
                         </article>
                         <article class="project-card">
-                            <img class="project-card__bg"
-                                src="/Practica Final Desarrollo/Assets/Pictures/perro_grande.jpg" alt="Perro grande">
+                            <img class="project-card__bg" src="../Assets/Pictures/perro_grande.jpg" alt="Perro grande">
                             <div class="project-card__content">
                                 <div>
                                     <h3 class="project-card__title">Grandes</h3><a href="#large-section"
@@ -138,22 +152,19 @@
                                     <h5>¿Por qué tantas calorías?</h5>
                                     <p>Debido a su alta relación <strong>superficie-volumen</strong>, los perros
                                         pequeños disipan calor corporal muy rápido. Su metabolismo basal trabaja a
-                                        marchas forzadas para mantener la temperatura, requiriendo una densidad calórica
-                                        por gramo muy superior a la de un perro gigante.</p>
+                                        marchas forzadas, requiriendo una densidad calórica por gramo muy superior.</p>
                                 </div>
                                 <div class="detail-item">
                                     <h5>Peligro: Hipoglucemia</h5>
                                     <p>Tienen reservas hepáticas de glucógeno insignificantes. Un ayuno prolongado causa
-                                        una caída crítica de glucosa (hipoglucemia neuroglucopénica) provocando
-                                        temblores y convulsiones. <strong>La alimentación frecuente es un soporte vital,
-                                            no un capricho.</strong></p>
+                                        una caída crítica de glucosa (hipoglucemia neuroglucopénica). <strong>La
+                                            alimentación frecuente es vital.</strong></p>
                                 </div>
                                 <div class="detail-item">
                                     <h5>Mecánica Dental</h5>
-                                    <p>La falta de espacio en la mandíbula provoca apiñamiento dental severo. Se
-                                        requiere una croqueta que obligue a la masticación mecánica y aditivos químicos
-                                        (Polifosfatos) que secuestren el calcio de la saliva para prevenir la formación
-                                        inmediata de sarro.</p>
+                                    <p>La falta de espacio provoca apiñamiento dental severo. Se
+                                        requiere una croqueta abrasiva y aditivos químicos (Polifosfatos) que secuestren
+                                        el calcio de la saliva para prevenir sarro.</p>
                                 </div>
                             </div>
                         </div>
@@ -176,12 +187,16 @@
                                     <td>26% - 30% (Mantenimiento muscular)</td>
                                 </tr>
                                 <tr>
+                                    <th>Grasa</th>
+                                    <td>Moderada (12% - 18%)</td>
+                                </tr>
+                                <tr>
                                     <th>Clave</th>
                                     <td>Ácidos Grasos Esenciales (Omega 3/6)</td>
                                 </tr>
                                 <tr>
                                     <th>Riesgo</th>
-                                    <td>Obesidad por inactividad</td>
+                                    <td>Obesidad y Dermatitis Atópica</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -200,23 +215,21 @@
                             <div class="detail-grid">
                                 <div class="detail-item">
                                     <h5>¿Por qué varía tanto la ración?</h5>
-                                    <p>Es el grupo más heterogéneo (desde Bulldogs sedentarios hasta Border Collies de
-                                        trabajo). El requerimiento calórico no depende del tamaño, sino de la función.
-                                        Alimentar a un perro mediano de sofá con una dieta "Performance" causa obesidad
+                                    <p>Es el grupo más heterogéneo. El requerimiento calórico depende de la función.
+                                        Alimentar a un perro mediano sedentario con dieta "Performance" causa obesidad
                                         inmediata.</p>
                                 </div>
                                 <div class="detail-item">
                                     <h5>Dermatología Preventiva</h5>
-                                    <p>Muchas razas medianas (Terriers, Bulldogs Franceses) tienen una predisposición
-                                        genética a la <strong>Dermatitis Atópica</strong> (barrera cutánea débil). Se
+                                    <p>Razas como Terriers y Bulldogs tienen barrera cutánea débil. Se
                                         requiere enriquecimiento con Ácido Linoleico y EPA/DHA para reducir la
-                                        inflamación sistémica de la piel.</p>
+                                        inflamación sistémica.</p>
                                 </div>
                                 <div class="detail-item">
                                     <h5>Sensibilidad Lipídica</h5>
-                                    <p>Razas específicas como el Schnauzer Miniatura/Mediano tienen defectos en el
-                                        metabolismo de grasas (Hiperlipidemia). Incluso si son activos, requieren
-                                        niveles moderados de grasa para evitar pancreatitis aguda.</p>
+                                    <p>Razas como el Schnauzer tienen defectos en el metabolismo de grasas
+                                        (Hiperlipidemia).
+                                        Requieren niveles moderados de grasa para evitar pancreatitis.</p>
                                 </div>
                             </div>
                         </div>
@@ -241,12 +254,16 @@
                                     <td><strong>Reducida: 35 - 55 kcal/kg</strong></td>
                                 </tr>
                                 <tr>
-                                    <th>Calcio</th>
-                                    <td>Estricto 0.8% - 1.2% (No suplementar)</td>
+                                    <th>Proteína</th>
+                                    <td>24% - 28% (Controlada)</td>
                                 </tr>
                                 <tr>
-                                    <th>Clave</th>
-                                    <td>Glucosamina, Condroitina, Taurina</td>
+                                    <th>Grasa</th>
+                                    <td>Baja/Controlada (10% - 14%)</td>
+                                </tr>
+                                <tr>
+                                    <th>Calcio</th>
+                                    <td>Estricto 0.8% - 1.2% (No suplementar)</td>
                                 </tr>
                                 <tr>
                                     <th>Protocolo</th>
@@ -264,22 +281,20 @@
                                 <div class="detail-item">
                                     <h5>¿Por qué menos calorías y calcio?</h5>
                                     <p>El objetivo es <strong>ralentizar el crecimiento</strong>. Un crecimiento
-                                        acelerado por exceso de energía o calcio provoca que el esqueleto inmaduro
-                                        colapse bajo el peso muscular, causando Displasia de Cadera u Osteocondrosis.
-                                        Los cachorros grandes no pueden regular la absorción de calcio; absorben todo lo
-                                        que comen.</p>
+                                        acelerado provoca que el esqueleto inmaduro colapse bajo el peso muscular
+                                        (Displasia).
+                                    </p>
                                 </div>
                                 <div class="detail-item">
                                     <h5>Prevención GDV (Torsión Gástrica)</h5>
-                                    <p>En pechos profundos, el estómago puede rotar sobre su eje si está lleno y hay
-                                        movimiento. Se requiere <strong>croqueta de gran tamaño</strong> (para obligar a
-                                        masticar y no tragar aire) y reposo post-comida. Nunca dar una sola comida al
-                                        día.</p>
+                                    <p>En pechos profundos, el estómago puede rotar si está lleno y hay
+                                        movimiento. Se requiere croqueta grande, reposo post-comida y nunca dar una sola
+                                        comida al día.</p>
                                 </div>
                                 <div class="detail-item">
                                     <h5>Soporte Cardíaco y Articular</h5>
-                                    <p>Debido a la carga masiva sobre las articulaciones y el esfuerzo cardíaco, la
-                                        dieta debe ser terapéutica desde jóvenes: Condroprotectores para el cartílago y
+                                    <p>Debido a la carga masiva, la dieta debe ser terapéutica: Condroprotectores para
+                                        el cartílago y
                                         Taurina/L-Carnitina para prevenir la Cardiomiopatía Dilatada (DCM).</p>
                                 </div>
                             </div>
@@ -287,6 +302,67 @@
                     </div>
                 </div>
             </div>
+
+            <section class="media-content-section mt-5">
+                <h2 class="text-white text-center mb-5" style="font-size: 2.2rem; letter-spacing: 1px;">Galería
+                    Nutricional</h2>
+
+                <div class="media-item mb-5 pb-5 border-bottom border-secondary">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 mb-4 mb-lg-0">
+                            <div class="image-container object-fit-cover">
+                                <img src="../Assets/Pictures/LeyKleiber.jpg" alt="Nutrición Equilibrada"
+                                    class="img-fluid rounded-4 shadow">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="image-text text-white">
+                                <h3>Nutrición Equilibrada por Tamaño</h3>
+                                <p>
+                                    Cada raza requiere una composición nutricional específica. Los perros pequeños
+                                    necesitan mayor densidad calórica debido a su metabolismo acelerado, mientras que
+                                    los grandes requieren un control estricto de energía para evitar problemas
+                                    articulares y cardíacos.
+                                </p>
+                                <ul class="info-list mt-3">
+                                    <li>✓ Proteína adaptada al tamaño</li>
+                                    <li>✓ Grasa como fuente primaria de energía</li>
+                                    <li>✓ Minerales balanceados según edad</li>
+                                    <li>✓ Digestibilidad optimizada</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="media-item">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 order-2 order-lg-1">
+                            <div class="image-text text-white">
+                                <h3>Control de Porciones y Frecuencia</h3>
+                                <p>
+                                    La frecuencia y cantidad de alimentación varía significativamente. Los pequeños
+                                    requieren 3-4 comidas diarias para evitar hipoglucemia, mientras que los grandes
+                                    benefician de 2 comidas con reposo post-alimentación para evitar torsiones
+                                    gástricas.
+                                </p>
+                                <ul class="info-list mt-3">
+                                    <li>✓ Pequeños: 3-4 comidas/día</li>
+                                    <li>✓ Medianos: 2-3 comidas/día</li>
+                                    <li>✓ Grandes: 2 comidas/día + reposo</li>
+                                    <li>✓ Comederos lentos para gigantes</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 order-1 order-lg-2 mb-4 mb-lg-0">
+                            <div class="image-container object-fit-contain">
+                                <img src="../Assets/Pictures/Tamaños.jpg" alt="Control de Porciones"
+                                    class="img-fluid rounded-4 shadow">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
         </section>
 
@@ -314,7 +390,7 @@
     <script src="../JS/Videos.js"></script>
     <script src="../JS/Carousel.js"></script>
     <script src="../JS/Navbar.js"></script>
+    <script src="../JS/cookies.js"></script>
 </body>
-
 
 </html>

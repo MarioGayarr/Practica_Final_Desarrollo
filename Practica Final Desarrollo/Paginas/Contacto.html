@@ -11,9 +11,26 @@
 
     <link rel="stylesheet" href="/Practica Final Desarrollo/CSS/StyleNavbar.css" />
     <link rel="stylesheet" href="/Practica Final Desarrollo/CSS/StylesContact.css" />
+    <link rel="stylesheet" href="/Practica Final Desarrollo/CSS/StylesCookies.css" />
 </head>
 
 <body>
+<!-- Overlay de bloqueo para cookies -->
+<div id="cookie-overlay" class="cookie-overlay"></div>
+
+<!-- Modal de aceptación de cookies -->
+<div id="barraaceptacion">
+    <div class="cookie-container">
+        <div class="cookie-content">
+            <h3>Política de Cookies</h3>
+            <p>Utilizamos cookies para mejorar tu experiencia en nuestro sitio. Al continuar navegando, aceptas el uso de cookies. Para más información, consulta nuestra <a href="#">política de privacidad</a>.</p>
+        </div>
+        <div class="cookie-buttons">
+            <button id="aceptar-cookies" class="btn">Aceptar</button>
+        </div>
+    </div>
+</div>
+
 <header>
     <nav id="mainNavbar" class="navbar navbar-expand-lg">
         <div class="container-fluid p-0">
@@ -156,6 +173,7 @@
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="../JS/Formulario.js"></script>
     <script src="../JS/Navbar.js"></script>
+    <script src="../JS/cookies.js"></script>
 
 </body>
 
