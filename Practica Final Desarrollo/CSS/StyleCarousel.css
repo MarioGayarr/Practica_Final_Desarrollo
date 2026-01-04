@@ -1,132 +1,84 @@
-.carousel {
-  position: relative;
-  /* Evita que se superponga a otros elementos */
-  z-index: 1;
-  /* Mantiene el carousel DEBAJO del navbar (el navbar tiene z-index mayor) */
+/* seccion contenedor del carousel */
+.carousel { /* contenedor del carousel */
+  position: relative; /* posiciona relativo al flujo */
+  z-index: 1; /* queda debajo del navbar con mayor z-index */
+  max-width: 1200px; /* limita ancho maximo del carousel */
+  width: 100%; /* usa todo el ancho disponible hasta el maximo */
 }
 
-/* Las imágenes se muestran completas sin recortes */
-.carousel-item img {
-  width: 100%;
-  /* La imagen ocupa todo el ancho disponible del carousel */
-  height: 500px;
-  /* Altura fija de 500px para todas las imágenes */
-  object-fit: contain;
-  /* Mantiene la imagen completa sin recortar, respetando sus proporciones */
-  background-color: #f8f9fa;
-  /* Fondo gris claro para visualizar el área de la imagen */
+/* seccion distribucion en la pagina */
+main { /* envoltorio principal */
+  display: flex; /* usa flex para alinear */
+  justify-content: center; /* centra horizontal */
+  align-items: center; /* centra vertical */
+  min-height: calc(100vh - 60px); /* altura menos navbar aproximado */
+  padding: 20px; /* separacion interna alrededor */
 }
 
-/* Centra el carousel en la pantalla */
-main {
-  display: flex;
-  /* Utiliza Flexbox para centrar el contenido */
-  justify-content: center;
-  /* Centra el carousel horizontalmente */
-  align-items: center;
-  /* Centra el carousel verticalmente */
-  min-height: calc(100vh - 60px);
-  /* Ocupa toda la altura de la ventana menos 60px del navbar */
-  padding: 20px;
-  /* Añade 20px de espacio alrededor del carousel */
+/* seccion interno del carousel */
+.carousel-inner { /* pista de slides */
+  background-color: transparent; /* sin fondo extra */
 }
 
-/* El carousel ocupa solo el espacio necesario */
-.carousel {
-  max-width: 1200px;
-  /* Ancho máximo del carousel de 1200px */
-  width: 100%;
-  /* Ocupa el 100% del ancho disponible hasta el máximo */
+/* seccion de cada slide */
+.carousel-item { /* slide individual */
+  height: 500px; /* alto uniforme para todos los slides */
+  transition: opacity 0.8s ease-in-out, transform 0.6s ease-in-out; /* anima opacidad y movimiento */
+  opacity: 0; /* inicio oculto hasta ser activo */
 }
 
-/* Ajusta el contenedor del carousel */
-.carousel-inner {
-  background-color: transparent;
-  /* Fondo transparente para el contenedor de slides */
+.carousel-item.active { /* slide activo */
+  opacity: 1; /* visible cuando esta activo */
 }
 
-.carousel-item {
-  height: 500px;
-  /* Altura fija de 500px igual que las imágenes */
-  transition: transform 0.6s ease-in-out;
-  /* Transición suave de 0.6 segundos al cambiar de slide */
+.carousel-item-next:not(.carousel-item-start) { /* entrada desde derecha */
+  transform: translateX(100%); /* mueve fuera a la derecha antes de entrar */
 }
 
-/* Animación de entrada desde la derecha */
-.carousel-item-next:not(.carousel-item-start) {
-  transform: translateX(100%);
-  /* Mueve el siguiente slide 100% hacia la derecha antes de entrar */
+.carousel-item-prev:not(.carousel-item-end) { /* entrada desde izquierda */
+  transform: translateX(-100%); /* mueve fuera a la izquierda antes de entrar */
 }
 
-/* Animación de entrada desde la izquierda */
-.carousel-item-prev:not(.carousel-item-end) {
-  transform: translateX(-100%);
-  /* Mueve el slide anterior 100% hacia la izquierda antes de entrar */
+/* seccion imagenes del slide */
+.carousel-item img { /* imagen del slide */
+  width: 100%; /* ocupa todo el ancho del contenedor */
+  height: 500px; /* alto fijo para consistencia */
+  object-fit: contain; /* muestra imagen completa sin recorte */
+  background-color: #f8f9fa; /* fondo claro de soporte */
+  transition: transform 0.6s ease-in-out; /* anima zoom suave */
 }
 
-/* Efecto de desvanecimiento adicional */
-.carousel-item {
-  opacity: 0;
-  /* Los slides empiezan invisibles */
-  transition: opacity 0.8s ease-in-out, transform 0.6s ease-in-out;
-  /* Transición de opacidad (0.8s) y movimiento (0.6s) */
+.carousel-item.active img { /* imagen cuando el slide esta activo */
+  animation: zoomIn 0.8s ease-out; /* aplica zoom corto al activar */
 }
 
-.carousel-item.active {
-  opacity: 1;
-  /* El slide activo se vuelve completamente visible */
-}
-
-/* Animación de zoom sutil al cambiar */
-.carousel-item img {
-  transition: transform 0.6s ease-in-out;
-  /* Transición suave para el efecto de zoom en la imagen */
-}
-
-.carousel-item.active img {
-  animation: zoomIn 0.8s ease-out;
-  /* Aplica la animación de zoom cuando el slide está activo */
-}
-
-/* Define la animación de zoom */
-@keyframes zoomIn {
-  from {
-    transform: scale(0.95);
-    /* La imagen empieza al 95% de su tamaño */
-    opacity: 0.8;
-    /* La imagen empieza con 80% de opacidad */
+@keyframes zoomIn { /* animacion de zoom de entrada */
+  from { /* estado inicial */
+    transform: scale(0.95); /* arranca ligeramente reducido */
+    opacity: 0.8; /* arranca un poco transparente */
   }
-  to {
-    transform: scale(1);
-    /* La imagen termina al 100% de su tamaño (tamaño normal) */
-    opacity: 1;
-    /* La imagen termina completamente visible */
+  to { /* estado final */
+    transform: scale(1); /* termina a tamaño normal */
+    opacity: 1; /* termina totalmente visible */
   }
 }
 
-/* Asegura que las flechas sean visibles y funcionales */
+/* seccion controles del carousel */
 .carousel-control-prev,
-.carousel-control-next {
-  z-index: 10;
-  /* Las flechas están por encima del contenido del carousel */
-  width: 10%;
-  /* Área clickeable más grande (10% del ancho del carousel) */
+.carousel-control-next { /* botones prev y next */
+  z-index: 10; /* se colocan sobre el contenido */
+  width: 10%; /* area clickeable amplia */
 }
 
 .carousel-control-prev-icon,
-.carousel-control-next-icon {
-  background-color: rgba(0, 0, 0, 0.5);
-  /* Fondo negro con 50% de opacidad para que las flechas se vean mejor */
-  border-radius: 50%;
-  /* Hace que el fondo de las flechas sea circular */
-  padding: 20px;
-  /* Añade 20px de espacio alrededor del icono de la flecha */
+.carousel-control-next-icon { /* iconos de flecha */
+  background-color: rgba(0, 0, 0, 0.5); /* fondo semitransparente oscuro */
+  border-radius: 50%; /* fondo circular */
+  padding: 20px; /* espacio interno para el icono */
 }
 
-/* Asegura que el navbar esté siempre visible */
-header {
-  position: relative;
-  /* Permite que el navbar se posicione de manera relativa */
-  z-index: 1000;
-  /* Prioridad máxima para que el navbar esté siempre por encima */
+/* seccion navbar relativo al carousel */
+header { /* cabecera con navbar */
+  position: relative; /* mantiene posicion de flujo */
+  z-index: 1000; /* asegura que quede encima del carousel */
 }

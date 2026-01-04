@@ -1,65 +1,58 @@
-$(document).ready(function () {
-    $('#contactForm').on('submit', function (e) {
-        // 1. IMPORTANTE: Esto evita que la página cambie a la pantalla blanca de Postman
-        e.preventDefault();
-        e.stopPropagation();
+$(document).ready(function () { 
+    $('#contactForm').on('submit', function (e) { //Cuando se envía el formulario
+        e.preventDefault(); /* previene el envio por defecto */
+        e.stopPropagation(); /* detiene la propagacion del evento */
 
-        let isValid = true;
-        const $form = $(this);
-        const $btn = $form.find('button[type="submit"]');
-        const $msg = $('#mensajeExito'); // Seleccionamos el mensaje
+        let isValid = true; /* validacion */
+        const $form = $(this); /* referencia al formulario */
+        const $btn = $form.find('button[type="submit"]'); /* boton de envio */
+        const $msg = $('#mensajeExito'); /* mensaje de exito */
 
-        // 2. Validación visual
-        $form.find('input').each(function () {
-            const $input = $(this);
+        $form.find('input').each(function () { /* itera sobre todos los inputs */
+            const $input = $(this); /* referencia al input actual */
 
-            // Limpiar estilos
-            $input.css({
-                'border': '',
-                'box-shadow': '',
-                'background-color': 'rgba(0, 0, 0, 0.4)' // Restaurar fondo original
+            $input.css({ /* resetea estilos previos */
+                'border': '', /* sin borde */
+                'box-shadow': '', /* sin sombra */
+                'background-color': 'rgba(0, 0, 0, 0.4)' /* restaura fondo original */
             });
 
-            if (!$input.val().trim() || !this.checkValidity()) {
-                isValid = false;
-                $input.css({
-                    'border': '2px solid #ff4444',
-                    'box-shadow': '0 0 10px rgba(255, 0, 0, 0.5)',
-                    'background-color': 'rgba(255, 0, 0, 0.1)'
+            if (!$input.val().trim() || !this.checkValidity()) { /* valida que el campo no este vacio */
+                isValid = false; /* marca como invalido */
+                $input.css({ /* aplica estilos de error */
+                    'border': '2px solid #ff4444', /* borde rojo */
+                    'box-shadow': '0 0 10px rgba(255, 0, 0, 0.5)', /* sombra roja */
+                    'background-color': 'rgba(255, 0, 0, 0.1)' /* fondo rojo claro */
                 });
             }
         });
 
-        if (!isValid) return; // Si falla, no enviamos nada
+        if (!isValid) return; /* si falla validacion, no continua */
 
-        // 3. Envío por AJAX
+        const originalBtnText = $btn.text(); /* guarda el texto original del boton */
+        $btn.text('Enviando...').prop('disabled', true); /* cambio visual del boton */
 
-        // Efecto visual en el botón
-        const originalBtnText = $btn.text();
-        $btn.text('Enviando...').prop('disabled', true);
+        $.ajax({ /* realiza peticion AJAX */
+            url: 'https://httpbin.org/post', /* URL del endpoint */
+            type: 'POST', /* metodo POST */
+            data: $form.serialize(), /* serializa datos del formulario */
+            success: function (response) { /* callback de exito */
 
-        $.ajax({
-            url: 'https://httpbin.org/post',
-            type: 'POST',
-            data: $form.serialize(),
-            success: function (response) {
-                // AQUÍ ESTÁ EL CAMBIO:
-                // 1. Mostramos los datos SOLO en consola
-                console.log('Datos recibidos por el servidor:', response);
+                console.log('Datos recibidos por el servidor:', response); /* muestra respuesta en consola */
 
-                // 2. En la pantalla mostramos el div bonito
-                $msg.fadeIn().delay(3000).fadeOut(); // Aparece, espera 3s, desaparece
+                /* seccion mostrada visual de exito */
+                $msg.fadeIn().delay(3000).fadeOut(); /* muestra mensaje, espera 3s y oculta */
 
-                // 3. Limpiamos el formulario
-                $form[0].reset();
+                /* seccion limpieza del formulario */
+                $form[0].reset(); /* resetea el formulario */
             },
-            error: function (xhr, status, error) {
-                console.error('Error:', error);
-                alert('Error de conexión. Inténtalo más tarde.');
+            error: function (xhr, status, error) { /* callback de error */
+                console.error('Error:', error); /* muestra error en consola */
+                alert('Error de conexión. Inténtalo más tarde.'); /* alerta de error */
             },
-            complete: function () {
-                // Restauramos el botón
-                $btn.text(originalBtnText).prop('disabled', false);
+            complete: function () { /* callback final */
+                /* seccion restauracion del boton */
+                $btn.text(originalBtnText).prop('disabled', false); /* restaura boton original */
             }
         });
     });

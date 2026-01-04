@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="CSS/StylesIndex.css" />
     <link rel="stylesheet" href="CSS/StyleNavbar.css" />
     <link rel="stylesheet" href="CSS/StylesCookies.css" />
+    <link rel="stylesheet" href="CSS/StylesFooter.css" />
 
 </head>
 
@@ -23,7 +24,7 @@
             <div class="cookie-content">
                 <h3>Política de Cookies</h3>
                 <p>Utilizamos cookies para mejorar tu experiencia en nuestro sitio. Al continuar navegando, aceptas el
-                    uso de cookies. Para más información, consulta nuestra <a href="#">política de privacidad</a>.</p>
+                    uso de cookies.</p>
             </div>
             <div class="cookie-buttons">
                 <button id="aceptar-cookies" class="btn">Aceptar</button>
@@ -32,8 +33,13 @@
     </div>
 
     <header>
+        <div>
+             <a class="navbar-logo" href="../Index.html">
+                    <img src="Assets/Icons/LogoPagina.png" alt="Perros by Perrotruco" class="logo-img">
+                </a>
+        </div>
         <nav id="mainNavbar" class="navbar navbar-expand-lg">
-            <div class="container-fluid p-0">
+                
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -44,7 +50,7 @@
 
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="navbar-brand" href="Index.html">
+                        <a class="navbar-brand active" href="Index.html">
                             <img src="Assets/Icons/Home.svg" alt="" width="28" height="28">
                             Home
                         </a>
@@ -62,7 +68,6 @@
                         </a>
                     </div>
                 </div>
-            </div>
         </nav>
     </header>
     <main>
@@ -152,7 +157,52 @@
         </section>
     </main>
     <footer>
-        <!-- place footer here -->
+        <div class="footer-content">
+            <div class="footer-logo-section">
+                <img src="Assets/Icons/LogoPagina.png" alt="Logo Perros by Perrotruco" class="footer-logo">
+                <div class="footer-logo-text">
+                    <h2>Perros by Perrotruco</h2>
+                    <p>Tu comunidad de amantes de perros</p>
+                </div>
+            </div>
+
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Navegación</h3>
+                    <div class="footer-links">
+                        <a href="Index.html">Home</a>
+                        <a href="Paginas/Razas.html">Razas de Perros</a>
+                        <a href="Paginas/Alimentacion.html">Alimentación</a>
+                        <a href="Paginas/Contacto.html">Contacto</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <div class="footer-contact">
+                        <div class="contact-item">  
+                            <div class="contact-icon">✉</div>
+                            <span>mariogayarre@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📱</div>
+                            <span>+34 684 267 890</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Síguenos</h3>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/mario_perrotruco" class="social-icon" title="Instagram">📷</a>
+                        <a href="https://x.com/perrotrucs?s=21" class="social-icon" title="Twitter">𝕏</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-credits">© 2026 Perros by Perrotruco. Todos los derechos reservados.</div>
+            </div>
+        </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha384-1H217gwSVyLSIfaLxHbE7dRb3v4mYCKbpQvzx0cegeju1MVsGrX5xXxAvs/HgeFs"

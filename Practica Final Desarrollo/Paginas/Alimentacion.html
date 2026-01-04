@@ -12,17 +12,18 @@
     <link rel="stylesheet" href="../CSS/StyleNavbar.css" />
     <link rel="stylesheet" href="../CSS/StyleCarouselAlimentacion.css">
     <link rel="stylesheet" href="../CSS/StylesCookies.css">
+    <link rel="stylesheet" href="../CSS/StylesFooter.css">
 </head>
 
 <body>
     <div id="cookie-overlay" class="cookie-overlay"></div>
 
-    <div id="barraaceptacion">
+     <div id="barraaceptacion">
         <div class="cookie-container">
             <div class="cookie-content">
                 <h3>Política de Cookies</h3>
                 <p>Utilizamos cookies para mejorar tu experiencia en nuestro sitio. Al continuar navegando, aceptas el
-                    uso de cookies. Para más información, consulta nuestra <a href="#">política de privacidad</a>.</p>
+                    uso de cookies.</p>
             </div>
             <div class="cookie-buttons">
                 <button id="aceptar-cookies" class="btn">Aceptar</button>
@@ -31,8 +32,14 @@
     </div>
 
     <header>
+        <div>
+             <a class="navbar-logo" href="../Index.html">
+                    <img src="../Assets/Icons/LogoPagina.png" alt="Perros by Perrotruco" class="logo-img">
+                </a>
+        </div>
         <nav id="mainNavbar" class="navbar navbar-expand-lg">
-            <div class="container-fluid p-0">
+               
+                
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -49,7 +56,7 @@
                         <a class="navbar-brand" href="/Practica Final Desarrollo/Paginas/Razas.html">
                             <img src="../Assets/Icons/perrete.svg" alt="" width="28" height="28"> Razas
                         </a>
-                        <a class="navbar-brand" href="/Practica Final Desarrollo/Paginas/Alimentacion.html">
+                        <a class="navbar-brand active" href="/Practica Final Desarrollo/Paginas/Alimentacion.html">
                             <img src="../Assets/Icons/alimentacion.svg" alt="" width="28" height="28"> Alimentación
                         </a>
                         <a class="navbar-brand" href="/Practica Final Desarrollo/Paginas/Contacto.html">
@@ -57,7 +64,6 @@
                         </a>
                     </div>
                 </div>
-            </div>
         </nav>
     </header>
 
@@ -304,8 +310,7 @@
             </div>
 
             <section class="media-content-section mt-5">
-                <h2 class="text-white text-center mb-5" style="font-size: 2.2rem; letter-spacing: 1px;">Galería
-                    Nutricional</h2>
+                <h2 class="text-white text-center mb-5">Galería Nutricional</h2>
 
                 <div class="media-item mb-5 pb-5 border-bottom border-secondary">
                     <div class="row align-items-center">
@@ -375,8 +380,54 @@
     </main>
 
     <footer>
-    </footer>
+        <div class="footer-content">
+            <div class="footer-logo-section">
+                <img src="../Assets/Icons/LogoPagina.png" alt="Logo Perros by Perrotruco" class="footer-logo">
+                <div class="footer-logo-text">
+                    <h2>Perros by Perrotruco</h2>
+                    <p>Tu comunidad de amantes de perros</p>
+                </div>
+            </div>
 
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Navegación</h3>
+                    <div class="footer-links">
+                        <a href="../Index.html">Home</a>
+                        <a href="Razas.html">Razas de Perros</a>
+                        <a href="Alimentacion.html">Alimentación</a>
+                        <a href="Contacto.html">Contacto</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <div class="footer-contact">
+                        <div class="contact-item">  
+                            <div class="contact-icon">✉</div>
+                            <span>mariogayarre@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📱</div>
+                            <span>+34 684 267 890</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Síguenos</h3>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/mario_perrotruco" class="social-icon" title="Instagram">📷</a>
+                        <a href="https://x.com/perrotrucs?s=21" class="social-icon" title="Twitter">𝕏</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-credits">© 2026 Perros by Perrotruco. Todos los derechos reservados.</div>
+            </div>
+        </div>
+    </footer>
+    
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha384-1H217gwSVyLSIfaLxHbE7dRb3v4mYCKbpQvzx0cegeju1MVsGrX5xXxAvs/HgeFs"
         crossorigin="anonymous"></script>
@@ -391,6 +442,7 @@
     <script src="../JS/Carousel.js"></script>
     <script src="../JS/Navbar.js"></script>
     <script src="../JS/cookies.js"></script>
+            
 </body>
 
 </html>

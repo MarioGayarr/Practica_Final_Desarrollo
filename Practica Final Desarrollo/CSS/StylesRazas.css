@@ -1,279 +1,233 @@
-/* --- CAMBIOS EN LA REJILLA --- */
-/* Grid responsive usando Bootstrap breakpoints */
-.breeds-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 15px;
-    width: 100%;
-    grid-auto-flow: dense;
-    scroll-behavior: smooth;
+/* seccion altura minima pagina */
+body { /* cuerpo de la pagina */
+  min-height: 3000px; /* altura mínima requerida */
 }
 
-/* Tablet - 4 columnas */
-@media (max-width: 1024px) {
-    .breeds-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
+/* seccion rejilla responsive */
+.breeds-grid { /* grilla principal */
+    display: grid; /* usa grid */
+    grid-template-columns: repeat(6, 1fr); /* seis columnas base */
+    gap: 15px; /* espacio entre cards */
+    width: 100%; /* ancho completo */
+    grid-auto-flow: dense; /* rellena huecos */
+    scroll-behavior: smooth; /* scroll suave */
 }
 
-/* Tablet pequeño/móvil grande - 3 columnas */
-@media (max-width: 768px) {
-    .breeds-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
+@media (max-width: 1024px) { /* tablet */
+    .breeds-grid { grid-template-columns: repeat(4, 1fr); } /* cuatro columnas */
 }
 
-/* Móvil - 2 columnas */
-@media (max-width: 576px) {
-    .breeds-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-    }
+@media (max-width: 768px) { /* tablet pequeño/movil grande */
+    .breeds-grid { grid-template-columns: repeat(3, 1fr); } /* tres columnas */
 }
 
-/* Móvil muy pequeño - 1 columna */
-@media (max-width: 380px) {
-    .breeds-grid {
-        grid-template-columns: 1fr;
-    }
+@media (max-width: 576px) { /* movil */
+    .breeds-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; } /* dos columnas */
 }
 
-/* --- TARJETA BASE --- */
-.breed-card {
-    position: relative;
-    height: 250px;
-    border-radius: 15px;
-    overflow: hidden;
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    background: #000;
-    cursor: pointer;
-    scroll-margin-top: 120px; /* Espacio para el navbar al hacer scroll */
-    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
-                opacity 0.4s ease, 
-                filter 0.4s ease, 
-                border-color 0.4s ease, 
-                box-shadow 0.4s ease,
-                grid-column 0s,
-                grid-row 0s;
+@media (max-width: 380px) { /* movil muy pequeño */
+    .breeds-grid { grid-template-columns: 1fr; } /* una columna */
 }
 
-.img-wrapper {
-    width: 100%;
-    height: 100%;
-    display: block;
-    overflow: hidden;
+/* seccion tarjeta base */
+.breed-card { /* card de raza */
+    position: relative; /* referencia interna */
+    height: 250px; /* alto inicial */
+    border-radius: 15px; /* esquinas redondeadas */
+    overflow: hidden; /* recorta exceso */
+    border: 2px solid rgba(255, 255, 255, 0.1); /* borde tenue */
+    background: #000; /* fondo negro */
+    cursor: pointer; /* cursor de mano */
+    scroll-margin-top: 120px; /* espacio para navbar al anclar */
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.4s ease, filter 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease, grid-column 0s, grid-row 0s; /* animaciones */
 }
 
-.breed-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-    transition: transform 0.5s ease;
+.img-wrapper { /* contenedor de imagen */
+    width: 100%; /* ancho completo */
+    height: 100%; /* alto completo */
+    display: block; /* elemento de bloque */
+    overflow: hidden; /* recorta exceso */
 }
 
-/* --- EFECTO HOVER --- */
-.breed-card:hover:not(.dimmed):not(.expanded) img {
-    transform: scale(1.1);
+.breed-card img { /* imagen de raza */
+    width: 100%; /* ancho completo */
+    height: 100%; /* alto completo */
+    object-fit: cover; /* cubre recortando */
+    object-position: center; /* centra imagen */
+    display: block; /* elimina espacio extra */
+    transition: transform 0.5s ease; /* anima zoom */
 }
 
-.breed-card:hover:not(.dimmed):not(.expanded) {
-    border-color: #FFD166;
-    box-shadow: 0 0 25px rgba(255, 209, 102, 0.3);
-    transform: translateY(-5px);
+/* seccion hover */
+.breed-card:hover:not(.dimmed):not(.expanded) img { /* zoom en hover */
+    transform: scale(1.1); /* amplia imagen */
 }
 
-/* Mostrar información en hover */
-.breed-card:hover:not(.dimmed):not(.expanded) .breed-info {
-    opacity: 1;
-    transform: translateY(0);
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.7));
+.breed-card:hover:not(.dimmed):not(.expanded) { /* efecto en card */
+    border-color: #FFD166; /* borde amarillo */
+    box-shadow: 0 0 25px rgba(255, 209, 102, 0.3); /* sombra amarilla */
+    transform: translateY(-5px); /* levanta la card */
 }
 
-.breed-info {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 15px;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4));
-    color: #fff;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.4s ease, transform 0.4s ease;
+.breed-card:hover:not(.dimmed):not(.expanded) .breed-info { /* muestra info en hover */
+    opacity: 1; /* visible */
+    transform: translateY(0); /* sube a su sitio */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.7)); /* degradado oscuro */
 }
 
-.breed-info h3 {
-    margin: 0;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #FFD166;
-    margin-bottom: 5px;
+.breed-info { /* capa de info */
+    position: absolute; /* sobre la imagen */
+    bottom: 0; /* pegado abajo */
+    left: 0; /* pegado izquierda */
+    right: 0; /* pegado derecha */
+    padding: 15px; /* relleno interno */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4)); /* fondo degradado */
+    color: #fff; /* texto blanco */
+    opacity: 0; /* oculto por defecto */
+    transform: translateY(20px); /* desplazado abajo */
+    transition: opacity 0.4s ease, transform 0.4s ease; /* animaciones */
 }
 
-.breed-info .audience {
-    margin: 0;
-    font-size: 0.85rem;
-    color: #ccc;
-    margin-bottom: 5px;
+.breed-info h3 { /* titulo de la raza */
+    margin: 0; /* sin margen */
+    font-size: 1.2rem; /* tamaño medio */
+    font-weight: bold; /* negrita */
+    color: #FFD166; /* color acento */
+    margin-bottom: 5px; /* espacio inferior */
 }
 
-.breed-info .desc {
-    margin: 0;
-    font-size: 0.9rem;
-    color: #e0e0e0;
+.breed-info .audience { /* publico objetivo */
+    margin: 0; /* sin margen */
+    font-size: 0.85rem; /* tamaño pequeño */
+    color: #ccc; /* gris claro */
+    margin-bottom: 5px; /* espacio inferior */
 }
 
-/* --- ESTADO 1: TARJETA EXPANDIDA (CLICK) --- */
-.breed-card.expanded {
-    grid-column: span 2;
-    grid-row: span 2;
-    height: auto;
-    min-height: 500px;
-    z-index: 10;
-    border-color: #FFD166;
-    box-shadow: 0 0 30px rgba(255, 209, 102, 0.3);
-    transform: scale(1);
-    opacity: 1;
-    filter: none;
-    animation: expandCard 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+.breed-info .desc { /* descripcion corta */
+    margin: 0; /* sin margen */
+    font-size: 0.9rem; /* tamaño base */
+    color: #e0e0e0; /* gris claro */
 }
 
-.breed-card.expanded .img-wrapper {
-    height: 50%;
-    position: relative;
-    overflow: hidden;
-    animation: expandImage 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+/* seccion tarjeta expandida */
+.breed-card.expanded { /* estado expandido */
+    grid-column: span 2; /* ocupa dos columnas */
+    grid-row: span 2; /* ocupa dos filas */
+    height: auto; /* alto adaptable */
+    min-height: 500px; /* minimo visible */
+    z-index: 10; /* sobre el resto */
+    border-color: #FFD166; /* borde acento */
+    box-shadow: 0 0 30px rgba(255, 209, 102, 0.3); /* sombra acento */
+    transform: scale(1); /* sin escala extra */
+    opacity: 1; /* visible */
+    filter: none; /* sin filtro gris */
+    animation: expandCard 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; /* animacion de expansion */
 }
 
-.breed-card.expanded .img-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    animation: zoomImage 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+.breed-card.expanded .img-wrapper { /* contenedor de imagen expandido */
+    height: 50%; /* mitad superior */
+    position: relative; /* contexto para la imagen */
+    overflow: hidden; /* recorta exceso */
+    animation: expandImage 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; /* animacion de altura */
 }
 
-.breed-card.expanded .breed-info {
-    opacity: 1;
-    transform: translateY(0);
-    position: relative;
-    height: auto;
-    max-height: calc(50% - 10px);
-    background: rgba(0,0,0,0.95);
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding: 20px;
-    animation: slideUpInfo 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-    
-    /* Estilos personalizados del scrollbar */
-    scrollbar-width: thin;
-    scrollbar-color: #FFD166 rgba(255, 255, 255, 0.1);
+.breed-card.expanded .img-wrapper img { /* imagen expandida */
+    width: 100%; /* llena ancho */
+    height: 100%; /* llena alto */
+    object-fit: cover; /* cubre recortando */
+    object-position: center; /* centra imagen */
+    animation: zoomImage 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; /* animacion zoom leve */
 }
 
-/* Scrollbar para Webkit (Chrome, Safari, Edge) */
-.breed-card.expanded .breed-info::-webkit-scrollbar {
-    width: 8px;
+.breed-card.expanded .breed-info { /* info en expandido */
+    opacity: 1; /* visible */
+    transform: translateY(0); /* posicion normal */
+    position: relative; /* entra al flujo */
+    height: auto; /* alto adaptable */
+    max-height: calc(50% - 10px); /* ocupa la mitad inferior menos margen */
+    background: rgba(0,0,0,0.95); /* fondo oscuro solido */
+    overflow-y: auto; /* scroll vertical si hay mucho texto */
+    overflow-x: hidden; /* sin scroll horizontal */
+    padding: 20px; /* relleno interno */
+    animation: slideUpInfo 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; /* animacion de entrada */
+    scrollbar-width: thin; /* scrollbar fino */
+    scrollbar-color: #FFD166 rgba(255, 255, 255, 0.1); /* colores scrollbar */
 }
 
-.breed-card.expanded .breed-info::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
+.breed-card.expanded .breed-info::-webkit-scrollbar { /* scrollbar webkit */
+    width: 8px; /* ancho del scrollbar */
 }
 
-.breed-card.expanded .breed-info::-webkit-scrollbar-thumb {
-    background: #FFD166;
-    border-radius: 10px;
-    transition: background 0.3s;
+.breed-card.expanded .breed-info::-webkit-scrollbar-track { /* pista */
+    background: rgba(255, 255, 255, 0.05); /* fondo tenue */
+    border-radius: 10px; /* esquinas */
 }
 
-.breed-card.expanded .breed-info::-webkit-scrollbar-thumb:hover {
-    background: #ffc233;
+.breed-card.expanded .breed-info::-webkit-scrollbar-thumb { /* pulgar */
+    background: #FFD166; /* color acento */
+    border-radius: 10px; /* esquinas redondeadas */
+    transition: background 0.3s; /* animacion color */
 }
 
-.details-content {
-    display: none;
-    margin-top: 10px;
-    font-size: 0.9rem;
-    color: #ccc;
-    animation: fadeIn 0.5s ease-in-out;
+.breed-card.expanded .breed-info::-webkit-scrollbar-thumb:hover { /* hover pulgar */
+    background: #ffc233; /* tono mas claro */
 }
 
-.breed-card.expanded .details-content {
-    display: block;
+.details-content { /* texto extra */
+    display: none; /* oculto por defecto */
+    margin-top: 10px; /* espacio superior */
+    font-size: 0.9rem; /* tamaño compacto */
+    color: #ccc; /* gris claro */
+    animation: fadeIn 0.5s ease-in-out; /* animacion de entrada */
 }
 
-/* Responsive para tarjeta expandida */
-@media (max-width: 768px) {
-    .breed-card.expanded {
-        grid-column: span 2;
-        grid-row: span 2;
-    }
+.breed-card.expanded .details-content { /* texto en expandido */
+    display: block; /* se muestra */
 }
 
-@media (max-width: 576px) {
-    .breed-card.expanded {
-        grid-column: span 2;
-        grid-row: span 2;
-        height: auto;
-        min-height: 450px;
-    }
+@media (max-width: 768px) { /* responsive para expandido en tablet */
+    .breed-card.expanded { grid-column: span 2; grid-row: span 2; } /* mantiene dos columnas */
 }
 
-/* --- ESTADO 2: TARJETAS NO SELECCIONADAS (DIMMED) --- */
-.breed-card.dimmed {
-    transform: scale(0.85);
-    opacity: 0.3;
-    filter: grayscale(80%);
-    pointer-events: none;
+@media (max-width: 576px) { /* responsive para movil */
+    .breed-card.expanded { grid-column: span 2; grid-row: span 2; height: auto; min-height: 450px; } /* altura menor */
 }
 
-.breed-card.dimmed:hover {
-    opacity: 0.3;
-    transform: scale(0.85);
-    pointer-events: none;
+/* seccion cartas atenuadas */
+.breed-card.dimmed { /* estado atenuado */
+    transform: scale(0.85); /* reduce tamaño */
+    opacity: 0.3; /* baja opacidad */
+    filter: grayscale(80%); /* aplica escala de grises */
+    pointer-events: none; /* no interactuable */
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+.breed-card.dimmed:hover { /* hover ignorado */
+    opacity: 0.3; /* mantiene opacidad */
+    transform: scale(0.85); /* mantiene escala */
+    pointer-events: none; /* sigue sin click */
 }
 
-@keyframes expandCard {
-    from {
-        transform: scale(1);
-    }
-    to {
-        transform: scale(1);
-    }
+@keyframes fadeIn { /* animacion de aparicion */
+    from { opacity: 0; transform: translateY(10px); } /* inicio invisible y abajo */
+    to { opacity: 1; transform: translateY(0); } /* final visible y en su lugar */
 }
 
-@keyframes expandImage {
-    from {
-        height: 100%;
-    }
-    to {
-        height: 50%;
-    }
+@keyframes expandCard { /* animacion de expandir card */
+    from { transform: scale(1); } /* inicio a escala normal */
+    to { transform: scale(1); } /* mantiene escala, solo temporiza */
 }
 
-@keyframes zoomImage {
-    from {
-        transform: scale(1);
-    }
-    to {
-        transform: scale(1.05);
-    }
+@keyframes expandImage { /* animacion de altura imagen */
+    from { height: 100%; } /* imagen llena todo */
+    to { height: 50%; } /* pasa a mitad del alto */
 }
 
-@keyframes slideUpInfo {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+@keyframes zoomImage { /* animacion de zoom */
+    from { transform: scale(1); } /* inicio normal */
+    to { transform: scale(1.05); } /* leve zoom */
+}
+
+@keyframes slideUpInfo { /* animacion de info */
+    from { opacity: 0; transform: translateY(20px); } /* oculta y abajo */
+    to { opacity: 1; transform: translateY(0); } /* visible y en su lugar */
 }

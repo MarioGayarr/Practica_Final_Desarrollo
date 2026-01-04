@@ -1,35 +1,33 @@
+//Codigo para expandir/contraer tarjetas de razas
 document.addEventListener('DOMContentLoaded', () => {
     const cards = document.querySelectorAll('.breed-card');
 
     cards.forEach(card => {
         
-        // 1. EVENTO CLICK (Expansión)
+        //EVENTO CLICK: Expande la tarjeta
         card.addEventListener('click', (e) => {
-            // Evitar que el click en detalles cierre la tarjeta
+            //Evitar que el click en detalles cierre la tarjeta
             if (e.target.closest('.details-content')) {
                 return;
             }
 
-            // Comprobamos si la tarjeta actual YA estaba abierta
             const isAlreadyActive = card.classList.contains('expanded');
 
-            // PASO A: Resetear todo (Limpiar el tablero)
-            // Quitamos clases 'expanded' y 'dimmed' de TODAS las tarjetas
+            //Resetear todas las tarjetas
             cards.forEach(c => {
                 c.classList.remove('expanded');
                 c.classList.remove('dimmed');
                 
-                // Forzamos el scroll al top del contenido si estaba bajado
+                //Resetear scroll al top
                 const info = c.querySelector('.breed-info');
                 if(info) info.scrollTop = 0;
             });
 
-            // PASO B: Si NO estaba activa, la activamos ahora
+            //Si no estaba activa, expandirla ahora
             if (!isAlreadyActive) {
-                // Expandimos la clicada
                 card.classList.add('expanded');
                 
-                // Oscurecemos y encogemos EL RESTO
+                //Oscurecer las demás
                 cards.forEach(c => {
                     if (c !== card) {
                         c.classList.add('dimmed');
@@ -38,10 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // 2. HOVER - Mostrar info sin expandir
-        // Solo queremos el efecto hover si NO hay ninguna tarjeta expandida
+        //EVENTO HOVER: Mostrar info sin expandir
         card.addEventListener('mouseenter', () => {
-            // Verificamos si hay alguna expandida en la web
             const anyExpanded = document.querySelector('.breed-card.expanded');
             
             if (!anyExpanded) {

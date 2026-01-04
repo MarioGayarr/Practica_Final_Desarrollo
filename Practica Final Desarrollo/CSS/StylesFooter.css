@@ -1,0 +1,295 @@
+/* seccion footer principal */
+footer { /* pie de pagina */
+    margin-top: 100px; /* espacio superior */
+    background: rgba(0, 0, 0, 0.3); /* fondo semitransparente */
+    backdrop-filter: blur(30px); /* desenfoque glassmorphism */
+    -webkit-backdrop-filter: blur(30px); /* compatibilidad webkit */
+    border-top: 1px solid rgba(255, 209, 102, 0.2); /* borde superior dorado */
+    padding: 60px 20px 20px; /* relleno interno */
+    color: #FAF5E9; /* color de texto claro */
+    position: relative; /* referencia para hijos posicionados */
+    overflow: hidden; /* oculta elementos fuera de limites */
+}
+
+
+/* seccion contenedor footer */
+.footer-content { /* contenedor principal del footer */
+    position: relative; /* referencia para z-index */
+    z-index: 1; /* sobre el fondo */
+    max-width: 1200px; /* ancho maximo */
+    margin: 0 auto; /* centra horizontalmente */
+    text-align: center; /* alinea texto al centro */
+}
+
+/* seccion logo footer */
+.footer-logo-section { /* contenedor del logo */
+    display: flex; /* usa flexbox */
+    flex-direction: column; /* items en columna */
+    align-items: center; /* centra horizontalmente */
+    justify-content: center; /* centra verticalmente */
+    margin-bottom: 40px; /* espacio inferior */
+    gap: 10px; /* espaciado entre items */
+}
+
+.footer-logo-section img { /* imagen del logo */
+    height: 50px; /* altura fija */
+    width: auto; /* ancho automatico */
+    transition: transform 0.3s ease; /* animacion suave */
+}
+
+.footer-logo-text { /* texto del logo */
+    text-align: center; /* alinea al centro */
+}
+
+.footer-logo-text h2 { /* titulo del logo */
+    margin: 0; /* sin margen */
+    font-size: 28px; /* tamaño grande */
+    font-weight: 700; /* negrita fuerte */
+    background: linear-gradient(135deg, #FFD166, #FAF5E9); /* gradiente dorado-claro */
+    -webkit-background-clip: text; /* aplica fondo al texto webkit */
+    -webkit-text-fill-color: transparent; /* texto transparente webkit*/
+    background-clip: text; /* aplica fondo al texto */
+}
+
+.footer-logo-text p { /* subtitulo del logo */
+    margin: 5px 0 0 0; /* pequeno margen superior */
+    font-size: 14px; /* tamaño pequeno */
+    color: rgba(255, 209, 102, 0.8); /* dorado semitransparente */
+}
+
+/* seccion grilla principal footer */
+.footer-grid { /* grilla de seccion principal */
+    display: grid; /* usa grid */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* columnas responsivas */
+    gap: 40px; /* espaciado entre items */
+    margin-bottom: 40px; /* espacio inferior */
+    padding-bottom: 40px; /* espacio interno inferior */
+    border-bottom: 1px solid rgba(255, 209, 102, 0.2); /* linea divisoria */
+    justify-items: center; /* centra items horizontalmente */
+}
+
+/* seccion items footer */
+.footer-section { /* seccion individual */
+    text-align: center; /* alinea texto al centro */
+}
+
+.footer-section h3 { /* titulo de seccion */
+    color: #FFD166; /* color dorado */
+    font-size: 16px; /* tamaño medio */
+    font-weight: 700; /* negrita */
+    margin-bottom: 20px; /* espacio inferior */
+    display: flex; /* usa flexbox */
+    align-items: center; /* centra verticalmente */
+    justify-content: center; /* centra horizontalmente */
+    gap: 8px; /* espaciado entre items */
+}
+
+.footer-section h3::before { /* linea decorativa antes del titulo */
+    width: 3px; /* ancho de la linea */
+    height: 20px; /* alto de la linea */
+    background: #FFD166; /* color dorado */
+    border-radius: 2px; /* esquinas ligeramente redondeadas */
+}
+
+/* seccion enlaces footer */
+.footer-links a { /* enlace */
+    color: #FAF5E9; /* texto claro */
+    text-decoration: none; /* sin subrayado */
+    font-size: 14px; /* tamaño pequeno */
+    transition: all 0.3s ease; /* animacion suave */
+    position: relative; /* referencia para la flecha */
+    padding-left: 8px; /* espacio para la flecha */
+}
+
+.footer-links a::before { /* flecha animada antes del enlace */
+    position: absolute; /* posicionamiento absoluto */
+    left: 0; /* alineada a la izquierda */
+    opacity: 0; /* inicialmente transparente */
+    transition: all 0.3s ease; /* animacion suave */
+    color: #FFD166; /* color dorado */
+}
+
+.footer-links a:hover { /* hover del enlace */
+    color: #FFD166; /* texto dorado */
+    transform: translateY(-3px); /* sube 3 pixeles */
+    text-shadow: 0 8px 20px rgba(255, 209, 102, 0.3); /* sombra dorada en el texto */
+}
+.footer-links a:hover::before { /* flecha visible al hover */
+    opacity: 1; /* totalmente visible */
+    
+}
+
+/* seccion informacion contacto */
+.footer-contact { /* contenedor de contacto */
+    display: flex; /* usa flexbox */
+    flex-direction: column; /* items en columna */
+    gap: 15px; /* espaciado entre items */
+    font-size: 14px; /* tamaño pequeno */
+    align-items: center; /* centra horizontalmente */
+}
+
+.contact-item { /* item de contacto */
+    display: flex; /* usa flexbox */
+    align-items: center; /* centra verticalmente */
+    gap: 10px; /* espaciado entre icono y texto */
+    transition: all 0.3s ease; /* animacion suave */
+}
+
+.contact-item:hover { /* hover del item */
+    color: #FFD166; /* texto dorado */
+    transform: translateY(-3px); /* sube 3 pixeles */
+    text-shadow: 0 8px 20px rgba(255, 209, 102, 0.3); /* sombra dorada en el texto */
+
+
+}
+
+.contact-icon { /* icono de contacto */
+    width: 20px; /* ancho fijo */
+    height: 20px; /* alto fijo */
+    background: rgba(255, 209, 102, 0.3); /* fondo dorado semitransparente */
+    border-radius: 50%; /* hace un circulo */
+    display: flex; /* usa flexbox */
+    align-items: center; /* centra verticalmente */
+    justify-content: center; /* centra horizontalmente */
+    font-size: 12px; /* tamaño muy pequeno */
+    color: #FFD166; /* color dorado */
+}
+
+/* seccion redes sociales */
+.footer-social { /* contenedor de iconos sociales */
+    justify-content: center; /* centra horizontalmente */
+    display: flex; /* usa flexbox */
+    gap: 12px; /* espaciado entre iconos */
+    flex-wrap: wrap; /* permite salto de linea */
+}
+
+.social-icon { /* icono individual de red social */
+    width: 40px; /* ancho fijo */
+    height: 40px; /* alto fijo */
+    border-radius: 50%; /* hace un circulo */
+    background: rgba(255, 209, 102, 0.15); /* fondo dorado muy claro */
+    border: 2px solid rgba(255, 209, 102, 0.4); /* borde dorado */
+    display: flex; /* usa flexbox */
+    align-items: center; /* centra verticalmente */
+    justify-content: center; /* centra horizontalmente */
+    color: #FFD166; /* color dorado */
+    text-decoration: none; /* sin subrayado */
+    transition: all 0.3s ease; /* animacion suave */
+    font-size: 18px; /* tamaño grande */
+}
+
+.social-icon:hover { /* hover del icono */
+    background: rgba(255, 209, 102, 0.3); /* fondo mas opaco */
+    border-color: #FFD166; /* borde dorado solido */
+    transform: translateY(-3px); /* sube 3 pixeles */
+    box-shadow: 0 8px 20px rgba(255, 209, 102, 0.2); /* sombra dorada */
+}
+
+/* seccion informacion acerca de */
+.footer-about { /* contenedor de informacion */
+    font-size: 13px; /* tamaño pequeno */
+    line-height: 1.6; /* interlineado comodo */
+    color: rgba(255, 245, 233, 0.8); /* texto claro semitransparente */
+}
+
+.footer-about p { /* parrafo de informacion */
+    margin: 0; /* sin margen */
+}
+
+/* seccion pie footer inferior */
+.footer-bottom { /* contenedor inferior del footer */
+    display: flex; /* usa flexbox */
+    justify-content: space-between; /* distribuye el espacio */
+    align-items: center; /* centra verticalmente */
+    flex-wrap: wrap; /* permite salto de linea */
+    gap: 20px; /* espaciado entre items */
+    padding-top: 20px; /* espacio interno superior */
+    border-top: 1px solid rgba(255, 209, 102, 0.15); /* linea divisoria */
+    font-size: 13px; /* tamaño muy pequeno */
+    color: rgba(255, 245, 233, 0.7); /* texto semitransparente */
+}
+
+.footer-bottom a { /* enlace en pie */
+    color: rgba(255, 245, 233, 0.9); /* texto claro */
+    text-decoration: none; /* sin subrayado */
+    transition: color 0.3s ease; /* animacion suave */
+}
+
+.footer-bottom a:hover { /* hover del enlace */
+    color: #FFD166; /* texto dorado */
+}
+
+.footer-credits { /* creditos del footer */
+    text-align: center; /* alinea al centro */
+    flex: 1; /* ocupa espacio disponible */
+    min-width: 100%; /* ancho minimo 100% */
+}
+
+/* seccion responsive tablet */
+@media (max-width: 768px) { /* ajustes para tablets */
+    footer { /* pie de pagina */
+        padding: 40px 15px 15px; /* relleno reducido */
+        margin-top: 60px; /* margen superior reducido */
+    }
+
+    .footer-grid { /* grilla */
+        grid-template-columns: 1fr; /* una sola columna */
+        gap: 30px; /* espaciado reducido */
+        margin-bottom: 30px; /* margen reducido */
+        padding-bottom: 30px; /* relleno reducido */
+    }
+
+    .footer-logo-section { /* seccion logo */
+        margin-bottom: 30px; /* margen reducido */
+    }
+
+    .footer-logo-section img { /* imagen logo */
+        height: 40px; /* altura reducida */
+    }
+
+    .footer-logo-text h2 { /* titulo logo */
+        font-size: 22px; /* tamaño reducido */
+    }
+
+    .footer-bottom { /* pie inferior */
+        flex-direction: column; /* items en columna */
+        text-align: center; /* alinea al centro */
+    }
+
+    .footer-credits { /* creditos */
+        order: 2; /* cambia el orden */
+    }
+}
+
+/* seccion responsive mobile */
+@media (max-width: 576px) { /* ajustes para movil */
+    footer { /* pie de pagina */
+        padding: 30px 10px 10px; /* relleno muy reducido */
+        margin-top: 40px; /* margen muy reducido */
+    }
+
+    .footer-grid { /* grilla */
+        gap: 20px; /* espaciado muy reducido */
+        margin-bottom: 20px; /* margen muy reducido */
+        padding-bottom: 20px; /* relleno muy reducido */
+    }
+
+    .footer-section h3 { /* titulo de seccion */
+        font-size: 14px; /* tamaño reducido */
+    }
+
+    .footer-links a,
+    .contact-item { /* enlaces y items de contacto */
+        font-size: 13px; /* tamaño muy pequeno */
+    }
+
+    .footer-social { /* redes sociales */
+        justify-content: center; /* centra horizontalmente */
+    }
+
+    .social-icon { /* iconos sociales */
+        width: 36px; /* ancho reducido */
+        height: 36px; /* alto reducido */
+        font-size: 16px; /* tamaño reducido */
+    }
+}

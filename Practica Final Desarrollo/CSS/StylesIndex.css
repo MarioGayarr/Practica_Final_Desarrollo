@@ -1,232 +1,209 @@
-html {
-  scroll-behavior: smooth;
+/* seccion base del documento */
+html { /* elemento raiz */
+  scroll-behavior: smooth; /* activa scroll suave */
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  position: relative;
-  background: #0a0a0a;
+body { /* cuerpo de la pagina */
+  margin: 0; /* sin margen externo */
+  padding: 0; /* sin relleno interno */
+  width: 100%; /* ocupa ancho completo */
+  position: relative; /* permite posicionar hijos relativos */
+  background: #0a0a0a; /* fondo oscuro general */
+  min-height: 3000px; /* altura mínima requerida */
 }
 
-/* --- CARRUSEL 100% VIEWPORT --- */
-#heroCarousel {
-  height: 100vh;
-  width: 100%;
-  position: relative;
+/* seccion carrusel a pantalla completa */
+#heroCarousel { /* contenedor principal del carrusel */
+  height: 100vh; /* alto igual al alto de la ventana */
+  width: 100%; /* ancho completo */
+  position: relative; /* referencia para posiciones absolutas dentro */
 }
 
-#heroCarousel .carousel-inner {
-  height: 100%;
+#heroCarousel .carousel-inner { /* pista del carrusel */
+  height: 100%; /* llena la altura del contenedor */
 }
 
-#heroCarousel .carousel-item {
-  height: 100vh;
-  position: relative;
+#heroCarousel .carousel-item { /* slide individual */
+  height: 100vh; /* cada slide ocupa la altura completa */
+  position: relative; /* referencia para el texto sobre la imagen */
 }
 
-#heroCarousel .carousel-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center;
-  filter: brightness(0.6);
+#heroCarousel .carousel-item img { /* imagen del slide */
+  width: 100%; /* ocupa ancho completo */
+  height: 100%; /* ocupa alto completo del slide */
+  object-fit: contain; /* muestra la imagen completa sin recorte */
+  object-position: center; /* centra la imagen en el espacio */
+  filter: brightness(0.6); /* oscurece para leer el texto encima */
 }
 
-/* --- TEXTO SOBRE LAS IMÁGENES --- */
-.carousel-caption-custom {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  width: 90%;
-  max-width: 1200px;
-  z-index: 10;
-  color: #fff;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+/* seccion texto sobre las imagenes */
+.carousel-caption-custom { /* contenedor del texto sobre el carrusel */
+  position: absolute; /* se posiciona sobre la imagen */
+  top: 50%; /* centra verticalmente */
+  left: 50%; /* centra horizontalmente */
+  transform: translate(-50%, -50%); /* ajusta al centro real */
+  text-align: center; /* alinea texto al centro */
+  width: 90%; /* ancho relativo para caber en mobile */
+  max-width: 1200px; /* limite de ancho en desktop */
+  z-index: 10; /* por encima de la imagen */
+  color: #fff; /* texto blanco */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); /* sombra para contraste */
 }
 
-.carousel-caption-custom h1 {
-  font-size: 4rem;
-  font-weight: 800;
-  margin-bottom: 1rem;
-  color: #FFD166;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  animation: fadeInUp 1s ease-out;
+.carousel-caption-custom h1 { /* titulo principal en el carrusel */
+  font-size: 4rem; /* tamaño grande para destacar */
+  font-weight: 800; /* negrita fuerte */
+  margin-bottom: 1rem; /* espacio inferior */
+  color: #FFD166; /* color amarillo principal */
+  text-transform: uppercase; /* texto en mayusculas */
+  letter-spacing: 2px; /* espaciado de letras */
+  animation: fadeInUp 1s ease-out; /* animacion de entrada */
 }
 
-.carousel-caption-custom h3 {
-  font-size: 1.8rem;
-  font-weight: 300;
-  color: #FAF5E9;
-  margin-bottom: 0;
-  animation: fadeInUp 1.2s ease-out;
+.carousel-caption-custom h3 { /* subtitulo en el carrusel */
+  font-size: 1.8rem; /* tamaño intermedio */
+  font-weight: 300; /* peso ligero */
+  color: #FAF5E9; /* tono claro */
+  margin-bottom: 0; /* sin margen inferior extra */
+  animation: fadeInUp 1.2s ease-out; /* animacion ligeramente mas tarde */
 }
 
-/* --- ANIMACIONES --- */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
+/* seccion animaciones reutilizadas */
+@keyframes fadeInUp { /* animacion de aparecer subiendo */
+  from { /* estado inicial */
+    opacity: 0; /* transparente al inicio */
+    transform: translateY(30px); /* desplazado hacia abajo */
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* --- RESPONSIVE TEXTO CARRUSEL --- */
-@media (max-width: 1200px) {
-  .carousel-caption-custom h1 {
-    font-size: 3.5rem;
-  }
-  .carousel-caption-custom h3 {
-    font-size: 1.6rem;
+  to { /* estado final */
+    opacity: 1; /* totalmente visible */
+    transform: translateY(0); /* posicion final sin desplazamiento */
   }
 }
 
-@media (max-width: 992px) {
-  .carousel-caption-custom h1 {
-    font-size: 3rem;
-  }
-  .carousel-caption-custom h3 {
-    font-size: 1.4rem;
-  }
+/* seccion responsive del texto del carrusel */
+@media (max-width: 1200px) { /* ajustes para pantallas medias */
+  .carousel-caption-custom h1 { font-size: 3.5rem; /* reduce titulo */ }
+  .carousel-caption-custom h3 { font-size: 1.6rem; /* reduce subtitulo */ }
 }
 
-@media (max-width: 768px) {
-  .carousel-caption-custom {
-    width: 95%;
-    top: 45%;
-  }
-  .carousel-caption-custom h1 {
-    font-size: 2.2rem;
-    letter-spacing: 1px;
-  }
-  .carousel-caption-custom h3 {
-    font-size: 1.2rem;
-  }
+@media (max-width: 992px) { /* ajustes para tablets */
+  .carousel-caption-custom h1 { font-size: 3rem; /* titulo mas pequeño */ }
+  .carousel-caption-custom h3 { font-size: 1.4rem; /* subtitulo mas pequeño */ }
 }
 
-@media (max-width: 576px) {
-  .carousel-caption-custom h1 {
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
-  }
-  .carousel-caption-custom h3 {
-    font-size: 1rem;
-  }
+@media (max-width: 768px) { /* ajustes para mobile */
+  .carousel-caption-custom { width: 95%; /* un poco mas ancho */ top: 45%; /* baja el texto */ }
+  .carousel-caption-custom h1 { font-size: 2.2rem; /* reduce titulo */ letter-spacing: 1px; /* menos espacio */ }
+  .carousel-caption-custom h3 { font-size: 1.2rem; /* reduce subtitulo */ }
 }
 
-@media (max-width: 400px) {
-  .carousel-caption-custom h1 {
-    font-size: 1.5rem;
-  }
-  .carousel-caption-custom h3 {
-    font-size: 0.9rem;
-  }
+@media (max-width: 576px) { /* ajustes para mobile pequeño */
+  .carousel-caption-custom h1 { font-size: 1.8rem; /* titulo compacto */ margin-bottom: 0.5rem; /* menos espacio */ }
+  .carousel-caption-custom h3 { font-size: 1rem; /* subtitulo compacto */ }
 }
 
-/* --- CONTROLES DEL CARRUSEL --- */
+@media (max-width: 400px) { /* ajustes para pantallas muy pequeñas */
+  .carousel-caption-custom h1 { font-size: 1.5rem; /* titulo minimo */ }
+  .carousel-caption-custom h3 { font-size: 0.9rem; /* subtitulo minimo */ }
+}
+
+/* seccion controles del carrusel */
 .carousel-control-prev,
-.carousel-control-next {
-  width: 10%;
-  opacity: 0.7;
-  transition: opacity 0.3s;
+.carousel-control-next { /* botones de navegacion */
+  width: 10%; /* area clickeable amplia */
+  opacity: 0.7; /* ligera transparencia por defecto */
+  transition: opacity 0.3s; /* cambio suave de opacidad */
 }
 
 .carousel-control-prev:hover,
-.carousel-control-next:hover {
-  opacity: 1;
+.carousel-control-next:hover { /* hover en botones */
+  opacity: 1; /* opacos al pasar el raton */
 }
 
-.carousel-indicators button {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: #FFD166;
-  opacity: 0.5;
-  transition: opacity 0.3s;
+.carousel-indicators button { /* indicadores de slide */
+  width: 12px; /* tamaño de punto */
+  height: 12px; /* altura igual al ancho */
+  border-radius: 50%; /* forma circular */
+  background-color: #FFD166; /* color del punto */
+  opacity: 0.5; /* semitransparente inactivo */
+  transition: opacity 0.3s; /* cambio suave */
 }
 
-.carousel-indicators button.active {
-  opacity: 1;
-  background-color: #FFD166;
+.carousel-indicators button.active { /* indicador activo */
+  opacity: 1; /* totalmente visible */
+  background-color: #FFD166; /* mantiene color amarillo */
 }
 
-/* --- SECCIÓN DE CONTENIDO ADICIONAL --- */
-.content-section {
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-  min-height: 50vh;
+/* seccion de contenido adicional debajo del carrusel */
+.content-section { /* fondo de la seccion extra */
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); /* degradado oscuro */
+  min-height: 50vh; /* altura minima para contenido */
 }
 
-.feature-card {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.4s ease;
-  color: #FAF5E9;
+.feature-card { /* tarjeta de feature */
+  background: rgba(255, 255, 255, 0.05); /* fondo translúcido */
+  backdrop-filter: blur(10px); /* desenfoque de fondo */
+  border-radius: 15px; /* esquinas redondeadas */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* borde sutil */
+  transition: all 0.4s ease; /* animacion general */
+  color: #FAF5E9; /* texto claro */
 }
 
-.feature-card:hover {
-  background: rgba(255, 209, 102, 0.1);
-  border-color: #FFD166;
-  transform: translateY(-10px);
-  box-shadow: 0 10px 30px rgba(255, 209, 102, 0.2);
+.feature-card:hover { /* estado hover de la tarjeta */
+  background: rgba(255, 209, 102, 0.1); /* fondo con tinte amarillo */
+  border-color: #FFD166; /* borde amarillo */
+  transform: translateY(-10px); /* levanta la tarjeta */
+  box-shadow: 0 10px 30px rgba(255, 209, 102, 0.2); /* sombra suave */
 }
 
-.feature-card img {
-  filter: brightness(0) invert(1);
-  transition: filter 0.3s;
+.feature-card img { /* icono de la tarjeta */
+  filter: brightness(0) invert(1); /* iconos claros sobre fondo oscuro */
+  transition: filter 0.3s; /* cambio suave de filtro */
 }
 
-.feature-card:hover img {
-  filter: brightness(1.2) sepia(1) hue-rotate(10deg) saturate(2);
+.feature-card:hover img { /* icono en hover */
+  filter: brightness(1.2) sepia(1) hue-rotate(10deg) saturate(2); /* efecto tintado */
 }
 
-.feature-card h3 {
-  color: #FFD166;
-  font-weight: 700;
-  margin-bottom: 1rem;
+.feature-card h3 { /* titulo de la tarjeta */
+  color: #FFD166; /* color destacado */
+  font-weight: 700; /* negrita */
+  margin-bottom: 1rem; /* espacio inferior */
 }
 
-.feature-card p {
-  color: #ccc;
-  line-height: 1.6;
+.feature-card p { /* descripcion de la tarjeta */
+  color: #ccc; /* texto claro */
+  line-height: 1.6; /* altura de linea comoda */
 }
 
-/* --- SECCIÓN INSTAGRAM --- */
-.instagram-section {
-  background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+/* seccion instagram embebido */
+.instagram-section { /* fondo de la seccion instagram */
+  background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%); /* degradado inverso */
 }
 
-.instagram-feed-container {
-  max-width: 1000px;
-  margin: 0 auto;
+.instagram-feed-container { /* contenedor del feed */
+  max-width: 1000px; /* ancho maximo centrado */
+  margin: 0 auto; /* centrado horizontal */
 }
 
-.instagram-placeholder {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 15px;
-  border: 2px dashed rgba(255, 209, 102, 0.3);
-  min-height: 400px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.instagram-placeholder { /* placeholder mientras se carga feed */
+  background: rgba(255, 255, 255, 0.05); /* fondo translúcido */
+  border-radius: 15px; /* esquinas redondeadas */
+  border: 2px dashed rgba(255, 209, 102, 0.3); /* borde punteado amarillo suave */
+  min-height: 400px; /* altura minima visible */
+  display: flex; /* usa flex para centrar */
+  flex-direction: column; /* apila verticalmente */
+  align-items: center; /* centra horizontalmente */
+  justify-content: center; /* centra verticalmente */
 }
 
-.instagram-placeholder a {
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s;
+.instagram-placeholder a { /* enlaces dentro del placeholder */
+  text-decoration: none; /* sin subrayado */
+  font-weight: 600; /* seminegrita */
+  transition: all 0.3s; /* cambios suaves */
 }
 
-.instagram-placeholder a:hover {
-  color: #E1306C !important;
-  text-decoration: underline;
+.instagram-placeholder a:hover { /* hover de enlaces */
+  color: #E1306C !important; /* color tipico de instagram */
+  text-decoration: underline; /* subrayado en hover */
 }

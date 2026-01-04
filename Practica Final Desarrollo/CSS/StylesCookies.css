@@ -1,174 +1,126 @@
-/* ===== MODAL DE COOKIES ===== */
-
-/* Overlay de bloqueo */
-.cookie-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 1998;
-    display: none;
+/* seccion overlay cookies */
+.cookie-overlay { /* capa bloqueante */
+    position: fixed; /* fija en pantalla */
+    top: 0; /* arriba */
+    left: 0; /* izquierda */
+    right: 0; /* derecha */
+    bottom: 0; /* abajo */
+    background-color: rgba(0, 0, 0, 0.7); /* oscurece fondo */
+    z-index: 1998; /* debajo del aviso */
+    display: none; /* oculta por defecto */
 }
 
-.cookie-overlay.show {
-    display: block;
+.cookie-overlay.show { /* overlay visible */
+    display: block; /* muestra capa */
 }
 
-/* Modal de cookies */
-#barraaceptacion {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-    border-top: 3px solid #bb8c4b;
-    padding: 25px;
-    display: none;
-    z-index: 1999;
-    box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.5);
-    animation: slideUp 0.4s ease-out;
+/* seccion banner cookies */
+#barraaceptacion { /* barra inferior */
+    position: fixed; /* fija al viewport */
+    bottom: 0; /* pegada abajo */
+    left: 0; /* al borde izquierdo */
+    right: 0; /* al borde derecho */
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); /* fondo degradado */
+    border-top: 3px solid #bb8c4b; /* linea acento */
+    padding: 25px; /* espacio interno */
+    display: none; /* oculto por defecto */
+    z-index: 1999; /* encima del overlay */
+    box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.5); /* sombra superior */
+    animation: slideUp 0.4s ease-out; /* animacion entrada */
 }
 
-#barraaceptacion.show {
-    display: block;
+#barraaceptacion.show { /* barra visible */
+    display: block; /* muestra barra */
 }
 
-@keyframes slideUp {
-    from {
-        transform: translateY(100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+@keyframes slideUp { /* animacion subir */
+    from { transform: translateY(100%); opacity: 0; } /* inicia abajo */
+    to { transform: translateY(0); opacity: 1; } /* termina en su lugar */
 }
 
-.cookie-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    flex-wrap: wrap;
+.cookie-container { /* contenido interno */
+    max-width: 1200px; /* ancho maximo */
+    margin: 0 auto; /* centra */
+    display: flex; /* usa flex */
+    align-items: center; /* centra vertical */
+    justify-content: space-between; /* separa elementos */
+    gap: 20px; /* espacio entre items */
+    flex-wrap: wrap; /* permite salto de linea */
 }
 
-.cookie-content {
-    flex: 1;
-    min-width: 250px;
+.cookie-content { /* bloque de texto */
+    flex: 1; /* ocupa espacio disponible */
+    min-width: 250px; /* ancho minimo */
 }
 
-.cookie-content h3 {
-    color: #bb8c4b;
-    font-size: 1.1rem;
-    margin-bottom: 8px;
-    font-weight: 600;
+.cookie-content h3 { /* titulo */
+    color: #bb8c4b; /* color acento */
+    font-size: 1.1rem; /* tamaño medio */
+    margin-bottom: 8px; /* espacio inferior */
+    font-weight: 600; /* seminegrita */
 }
 
-.cookie-content p {
-    color: #ccc;
-    font-size: 0.95rem;
-    line-height: 1.5;
-    margin: 0;
+.cookie-content p { /* descripcion */
+    color: #ccc; /* gris claro */
+    font-size: 0.95rem; /* tamaño base */
+    line-height: 1.5; /* lectura comoda */
+    margin: 0; /* sin margen extra */
 }
 
-.cookie-content a {
-    color: #bb8c4b;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease;
+.cookie-content a { /* enlace */
+    color: #bb8c4b; /* color acento */
+    text-decoration: none; /* sin subrayado */
+    font-weight: 600; /* seminegrita */
+    transition: color 0.3s ease; /* cambio suave */
 }
 
-.cookie-content a:hover {
-    color: #d4a574;
+.cookie-content a:hover { /* hover enlace */
+    color: #d4a574; /* tono mas claro */
 }
 
-.cookie-buttons {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
+.cookie-buttons { /* contenedor botones */
+    display: flex; /* alinea horizontal */
+    gap: 12px; /* espacio entre botones */
+    flex-wrap: wrap; /* permite salto */
 }
 
-#aceptar-cookies {
-    background-color: #bb8c4b;
-    color: #000;
-    border: none;
-    padding: 10px 30px;
-    border-radius: 5px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: 0.95rem;
-    white-space: nowrap;
+#aceptar-cookies { /* boton aceptar */
+    background-color: #bb8c4b; /* fondo acento */
+    color: #000; /* texto oscuro */
+    border: none; /* sin borde */
+    padding: 10px 30px; /* relleno */
+    border-radius: 5px; /* esquinas redondeadas */
+    font-weight: 600; /* seminegrita */
+    cursor: pointer; /* cursor mano */
+    transition: all 0.3s ease; /* animacion */
+    font-size: 0.95rem; /* tamaño base */
+    white-space: nowrap; /* evita saltos */
 }
 
-#aceptar-cookies:hover {
-    background-color: #d4a574;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(187, 140, 75, 0.3);
+#aceptar-cookies:hover { /* hover boton */
+    background-color: #d4a574; /* tono claro */
+    transform: translateY(-2px); /* levanta */
+    box-shadow: 0 4px 12px rgba(187, 140, 75, 0.3); /* sombra */
 }
 
-#aceptar-cookies:active {
-    transform: translateY(0);
+#aceptar-cookies:active { /* click boton */
+    transform: translateY(0); /* vuelve a sitio */
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .cookie-container {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 15px;
-    }
-
-    .cookie-content {
-        text-align: center;
-    }
-
-    .cookie-buttons {
-        justify-content: center;
-    }
-
-    .cookie-content h3 {
-        font-size: 1rem;
-    }
-
-    .cookie-content p {
-        font-size: 0.9rem;
-    }
-
-    #aceptar-cookies {
-        width: 100%;
-        padding: 12px 20px;
-    }
-
-    #barraaceptacion {
-        padding: 20px 15px;
-    }
+@media (max-width: 768px) { /* responsive tablet */
+    .cookie-container { flex-direction: column; align-items: stretch; gap: 15px; } /* pila vertical */
+    .cookie-content { text-align: center; } /* centra texto */
+    .cookie-buttons { justify-content: center; } /* centra botones */
+    .cookie-content h3 { font-size: 1rem; } /* titulo mas pequeño */
+    .cookie-content p { font-size: 0.9rem; } /* texto mas pequeño */
+    #aceptar-cookies { width: 100%; padding: 12px 20px; } /* boton ancho completo */
+    #barraaceptacion { padding: 20px 15px; } /* menos padding */
 }
 
-@media (max-width: 575px) {
-    .cookie-container {
-        gap: 10px;
-    }
-
-    #barraaceptacion {
-        padding: 15px 10px;
-    }
-
-    .cookie-content h3 {
-        font-size: 0.95rem;
-        margin-bottom: 5px;
-    }
-
-    .cookie-content p {
-        font-size: 0.85rem;
-    }
-
-    #aceptar-cookies {
-        padding: 10px 20px;
-        font-size: 0.9rem;
-    }
+@media (max-width: 575px) { /* responsive movil */
+    .cookie-container { gap: 10px; } /* menos espacio */
+    #barraaceptacion { padding: 15px 10px; } /* padding reducido */
+    .cookie-content h3 { font-size: 0.95rem; margin-bottom: 5px; } /* titulo compacto */
+    .cookie-content p { font-size: 0.85rem; } /* texto compacto */
+    #aceptar-cookies { padding: 10px 20px; font-size: 0.9rem; } /* boton compacto */
 }
